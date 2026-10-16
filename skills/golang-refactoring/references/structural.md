@@ -175,7 +175,7 @@ retract (
 - When the _behavior_ differs per type — even by one branch — that's an interface, not a generic; a generic with a type switch inside it is usually an interface wearing a disguise.
 - A practical litmus test: reach for a generic when a type parameter would eliminate a type assertion that's currently in the code, and the constraint it needs stays narrow — `comparable`, `cmp.Ordered`, or a small one-method interface.
 - Write the concrete version first; refactor to generic only once the duplication is real and already committed in two or more places, not anticipated for a future third caller that may never arrive.
-- As of this writing, Go has no method-level type parameters, which blocks fluent generic method chaining (`Map` returning a differently-typed receiver) as a design option — plan around that limitation rather than discovering it mid-refactor.
+- Methods can declare their own type parameters only from Go 1.27 (and a generic method cannot satisfy an interface). Below a `go 1.27` directive, fluent generic chaining (`Map` returning a differently-typed receiver) is not available — check the module's `go` directive before planning around it.
 - Verify a generics migration the same way as any other refactor, no special-casing: `go build ./... && go vet ./...` plus the full test suite for the touched packages.
 
 ## Common Mistakes

@@ -24,7 +24,7 @@ injector.ShutdownOnSignalsWithContext(ctx, os.Interrupt)
 ## Why samber/do
 
 - **No code generation** — no build step, no generated files to maintain
-- **No reflection** — errors are caught at compile time via generics, not at runtime
+- **No reflection** — generics catch type mismatches at compile time; a missing provider still surfaces as an error from `Invoke` at runtime
 - **Strongly typed** — Go generics provide full type safety without `interface{}` casts
 - **Built-in lifecycle** — health checks and graceful shutdown detected automatically
 - **Container cloning** — create isolated test containers from production configuration

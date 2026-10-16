@@ -56,7 +56,7 @@ type ConnPool struct {
 }
 ```
 
-`go vet` reports an error if a `ConnPool` value is copied (passed by value, assigned, returned by value, ranged over). The detection is purely name-based: `vet`'s `copylocks` analyzer flags any type whose fields implement `Lock`/`Unlock`. This is the same technique the standard library uses for `sync.WaitGroup`, `sync.Mutex`, `strings.Builder`, and others.
+`go vet` reports an error if a `ConnPool` value is copied (passed by value, assigned, returned by value, ranged over). The detection is purely name-based: `vet`'s `copylocks` analyzer flags any type whose fields implement `Lock`/`Unlock`. This is the same technique the standard library uses for `sync.WaitGroup`, `sync.Mutex`, and others (`strings.Builder` instead detects copies at runtime).
 
 Pass these structs by pointer:
 

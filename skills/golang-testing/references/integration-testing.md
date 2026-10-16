@@ -13,7 +13,6 @@
 Create `pkg/myfeature/testdata/docker-compose.yml` for test services:
 
 ```yaml
-version: "3.8"
 services:
   postgres:
     image: postgres:16-alpine
@@ -100,12 +99,10 @@ type DatabaseTestSuite struct {
 }
 
 func (s *DatabaseTestSuite) SetupSuite() {
-    cmd := exec.Command("docker-compose", "-f", "testdata/docker-compose.yml", "up", "-d")
+    cmd := exec.Command("docker", "compose", "-f", "testdata/docker-compose.yml", "up", "-d", "--wait")
     if err := cmd.Run(); err != nil {
-        s.T().Fatalf("failed to start docker-compose: %v", err)
+        s.T().Fatalf("failed to start docker compose: %v", err)
     }
-
-    time.Sleep(5 * time.Second)
 
     db, err := sql.Open("postgres", "postgres://test:test@localhost:5433/testdb?sslmode=disable")
     if err != nil {
@@ -121,7 +118,7 @@ func (s *DatabaseTestSuite) SetupSuite() {
 }
 
 func (s *DatabaseTestSuite) TearDownSuite() {
-    cmd := exec.Command("docker-compose", "-f", "testdata/docker-compose.yml", "down", "-v")
+    cmd := exec.Command("docker", "compose", "-f", "testdata/docker-compose.yml", "down", "-v")
     _ = cmd.Run()
 }
 

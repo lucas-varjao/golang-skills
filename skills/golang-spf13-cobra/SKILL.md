@@ -40,7 +40,7 @@ Cobra is the de facto standard for Go CLI applications. It provides the command/
 
 This skill is not exhaustive — refer to library documentation and code examples for more information:
 
-- For Go package docs, symbols, versions, importers, and known vulnerabilities, use `godig` or pkg.go.dev, preferred over Context7 for Go package facts.
+- For Go package docs, symbols, versions, importers, and known vulnerabilities, use `go doc` or pkg.go.dev, preferred over Context7 for Go package facts.
 - To navigate this library's usage in your own code (definitions, call sites, diagnostics), use `gopls`.
 - Context7 remains a fallback for docs not indexed on pkg.go.dev.
 
@@ -131,10 +131,11 @@ Test commands by executing them programmatically. **Never use `os.Stdout` / `os.
 
 ```go
 func TestServeCmd(t *testing.T) {
+    cmd := newRootCmd() // fresh command tree per test, see testing.md
     buf := new(bytes.Buffer)
-    rootCmd.SetOut(buf)
-    rootCmd.SetArgs([]string{"serve", "--port", "9090"})
-    require.NoError(t, rootCmd.Execute())
+    cmd.SetOut(buf)
+    cmd.SetArgs([]string{"serve", "--port", "9090"})
+    require.NoError(t, cmd.Execute())
     assert.Contains(t, buf.String(), "listening on :9090")
 }
 ```

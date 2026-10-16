@@ -69,10 +69,10 @@ import "log/slog"
 
 // Sanitize user input before logging
 func sanitizeLogInput(input string) string {
-    // Remove control characters
+    // Remove control characters, including \n and \r, which would let input forge log lines
     var result strings.Builder
     for _, r := range input {
-        if !unicode.IsControl(r) || r == '\n' || r == '\t' {
+        if !unicode.IsControl(r) {
             result.WriteRune(r)
         }
     }

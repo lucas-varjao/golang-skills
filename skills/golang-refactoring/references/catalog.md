@@ -83,7 +83,7 @@ Editor-integrated as "Rename Symbol" (F2 in most gopls-backed editors).
 
 - **Risk:** Low — but treat any refusal as a real semantic hazard to investigate, not friction to route around by hand-editing instead.
 
-This entry covers only _how_ to apply the rename safely at scale.
+This entry covers _how_ to apply a rename safely at scale, not which name to pick.
 
 ## Change Function Declaration (Signature)
 

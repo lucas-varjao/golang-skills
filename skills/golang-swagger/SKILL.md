@@ -227,7 +227,7 @@ type CreateUserRequest struct {
 
 This skill is not exhaustive — refer to the swaggo/swag documentation and code examples for up-to-date API signatures and usage patterns:
 
-- For Go package docs, symbols, versions, importers, and known vulnerabilities, use `godig` or pkg.go.dev, preferred over Context7 for Go package facts.
+- For Go package docs, symbols, versions, importers, and known vulnerabilities, use `go doc` or pkg.go.dev, preferred over Context7 for Go package facts.
 - To navigate this library's usage in your own code (definitions, call sites, diagnostics), use `gopls`.
 - Context7 remains a fallback for docs not indexed on pkg.go.dev.
 

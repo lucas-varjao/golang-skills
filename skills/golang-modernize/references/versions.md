@@ -777,10 +777,10 @@ Go 1.27 lifted a restriction present since generics landed in Go 1.18: a method 
 
 ```go
 // Before: package-scope generic function, disconnected from the type it serves
-func FilterInts[T any](s []T, pred func(T) bool) []T { ... }
+func MapSet[T, U comparable](s Set[T], f func(T) U) Set[U] { ... }
 
 // After (Go 1.27+): generic method, scoped to the receiver
-func (s Set[T]) Filter[U comparable](pred func(T) U) Set[T] { ... }
+func (s Set[T]) Map[U comparable](f func(T) U) Set[U] { ... }
 ```
 
 The standard library's own `(*rand.Rand).N[Int intType](n Int) Int` (`math/rand/v2`) is the reference example.

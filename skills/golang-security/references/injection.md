@@ -216,12 +216,12 @@ t.Execute(w, data)
 **Good:**
 
 ```go
-// Validate input
-user := strings.TrimSpace(r.URL.Query().Get("user"))
+// Validate input against an allowlist, and render with html/template, which escapes by context
+role := strings.TrimSpace(r.URL.Query().Get("role"))
 if !allowedRoles[role] {
     role = "user"
 }
-t.Execute(w, data)
+t.Execute(w, role)
 ```
 
 ---
