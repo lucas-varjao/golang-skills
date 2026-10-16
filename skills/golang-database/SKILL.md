@@ -41,7 +41,7 @@ When using sqlx or pgx, refer to the library's official documentation and code e
 3. Context MUST be passed to all database operations — use `*Context` method variants (`QueryContext`, `ExecContext`, `GetContext`)
 4. `sql.ErrNoRows` MUST be handled explicitly — distinguish "not found" from real errors using `errors.Is`
 5. Rows MUST be closed after iteration — `defer rows.Close()` immediately after `QueryContext` calls
-6. NEVER use `db.Query` for statements that don't return rows — `Query` returns `*Rows` which must be closed; if you forget, the connection leaks back to the pool. Use `db.Exec` instead
+6. NEVER use `db.Query` for statements that don't return rows — `Query` returns `*Rows` which must be closed; if you forget, the connection is never returned to the pool. Use `db.Exec` instead
 7. **Use transactions for multi-statement operations** — wrap related writes in `BeginTxx`/`Commit`
 8. **Use `SELECT ... FOR UPDATE`** when reading data you intend to modify — prevents race conditions
 9. **Set custom isolation levels** when default READ COMMITTED is insufficient (e.g., serializable for financial operations)

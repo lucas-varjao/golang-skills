@@ -162,7 +162,7 @@ For `t.Setenv` interactions and `Reset()` limitations, see [testing-and-isolatio
 2. **Handle `ConfigFileNotFoundError` gracefully** — a missing config file should not crash a service that runs with only flags and env vars.
 3. **Always use `mapstructure` tags on config structs** — implicit mapping silently misses nested and underscore-named fields.
 4. **Use `viper.New()` in tests, never the global** — the global accumulates state across test runs; per-test instances are isolated.
-5. **Bind flags before `Execute()`** — binding in `RunE` is too late; cobra parses flags before `RunE` runs.
+5. **Bind flags before reading config values** — bind in `init()` or `PersistentPreRunE` with `BindPFlag`, so every `viper.Get*` call sees the flag layer.
 
 ## Common Mistakes
 

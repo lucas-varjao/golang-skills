@@ -60,7 +60,7 @@ cmd.MarkFlagsMutuallyExclusive("json", "yaml", "table")
 // Fail if none provided
 cmd.MarkFlagsOneRequired("file", "stdin")
 
-// Require flag only if another flag is set
+// Fail if both provided
 cmd.MarkFlagsMutuallyExclusive("tls", "no-tls")
 ```
 

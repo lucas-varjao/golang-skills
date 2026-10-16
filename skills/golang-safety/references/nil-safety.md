@@ -25,7 +25,7 @@ type Logger struct {
     prefix string
 }
 
-// ✓ Safe on nil but NEVER do that — does not dereference l
+// ✓ Safe on nil — does not dereference l
 func (l *Logger) IsEnabled() bool {
     return l != nil
 }
@@ -40,7 +40,7 @@ l.IsEnabled() // false — works fine
 l.Log("test") // panic: nil pointer dereference
 ```
 
-Anyway, NEVER call a method on a nil pointer.
+Call a method on a possibly-nil pointer only when that method is documented as nil-safe, like the one above.
 
 ### Designing nil-safe receivers
 

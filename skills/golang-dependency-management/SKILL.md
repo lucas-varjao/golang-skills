@@ -31,7 +31,7 @@ allowed-tools: Read Edit Write Glob Grep Bash(go:*) Bash(golangci-lint:*) Bash(g
 
 ## AI Agent Rule: Ask Before Adding Dependencies
 
-**Before running `go get` to add any new dependency, AI agents MUST ask the user for confirmation.** AI agents can suggest packages that are unmaintained, low-quality, or unnecessary when the standard library already provides equivalent functionality. Using `go get -u` to upgrade an existing dependency is safe.
+**Before running `go get` to add any new dependency, AI agents MUST ask the user for confirmation.** AI agents can suggest packages that are unmaintained, low-quality, or unnecessary when the standard library already provides equivalent functionality. Upgrading an existing dependency does not need confirmation, but review the resulting `go.mod`/`go.sum` diff and prefer `go get -u=patch` (see below).
 
 Before proposing a dependency, evaluate:
 

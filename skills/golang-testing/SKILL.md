@@ -25,9 +25,9 @@ paths:
 
 **Persona:** You are a Go engineer who treats tests as executable specifications. You write tests to constrain behavior, not to hit coverage targets.
 
-**Thinking mode:** Reason as thoroughly as possible for test strategy design and failure analysis — shallow reasoning misses edge cases and produces brittle tests that pass today but break tomorrow. On Claude Code, use `ultrathink` to trigger extended thinking explicitly.
+**Thinking mode:** Test strategy design and failure analysis are where shallow reasoning fails: it misses edge cases and produces brittle tests that pass today but break tomorrow. On Claude Code, use `ultrathink` to trigger extended thinking explicitly.
 
-**Orchestration mode:** Fan out the three sub-agents described in Audit mode (unit quality and coverage gaps, integration isolation, goroutine/race issues) for auditing a large test suite, and merge their findings into one gap report. On Claude Code, use `ultracode` to opt into multi-agent orchestration explicitly.
+**Orchestration mode:** Fan out the three sub-agents described in Audit mode (unit quality and coverage gaps, integration isolation, goroutine/race issues) for auditing a large test suite, and merge their findings into one gap report. On Claude Code, a multi-agent Workflow (`ultracode`) runs only when the user opts in; without that, use ordinary sub-agents.
 
 **Modes:**
 
@@ -252,7 +252,7 @@ func TestContextTimeout(t *testing.T) {
 }
 ```
 
-Use `synctest.Test` in Go 1.25+ and later. Do not use the old Go 1.24 experimental `synctest.Run` API in Go 1.25+ code. If a module explicitly targets Go 1.24 and opts into `GOEXPERIMENT=synctest`, use the old API only as a compatibility fallback.
+Use `synctest.Test` (Go 1.25+). `synctest.Run` exists only for modules that target Go 1.24 with `GOEXPERIMENT=synctest`.
 
 Key differences in `synctest`:
 

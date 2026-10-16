@@ -6,7 +6,7 @@
   - [Stack vs Heap (Escape Analysis)](#stack-vs-heap-escape-analysis)
   - [`new(T)` vs `&T{}`](#newt-vs-t)
 - [`unsafe.Pointer`](#unsafepointer)
-  - [The 6 Valid Patterns (from the Go spec)](#the-6-valid-patterns-from-the-go-spec)
+  - [Valid Patterns (from the Go spec)](#valid-patterns-from-the-go-spec)
   - [Critical Rule: NEVER Store `uintptr` Across Statements](#critical-rule-never-store-uintptr-across-statements)
   - [Modern Alternatives (prefer these)](#modern-alternatives-prefer-these)
 - [`weak.Pointer[T]` (Go 1.24+)](#weakpointert-go-124)
@@ -44,9 +44,9 @@ p := &Point{X: 1}     // *Point with initialized fields — preferred
 
 ## `unsafe.Pointer`
 
-`unsafe.Pointer` bypasses Go's type system for FFI and low-level memory manipulation. Only the 6 patterns from the Go spec are safe; any other pattern is undefined behavior.
+`unsafe.Pointer` bypasses Go's type system for FFI and low-level memory manipulation. Only the patterns the Go spec lists for `unsafe.Pointer` are safe; any other pattern is undefined behavior.
 
-### The 6 Valid Patterns (from the Go spec)
+### Valid Patterns (from the Go spec)
 
 These are the ONLY safe ways to use `unsafe.Pointer`. Any other pattern is undefined behavior.
 

@@ -74,7 +74,7 @@ func (c *DBCollector) Describe(ch chan<- *prometheus.Desc) {
     ch <- prometheus.NewDesc("db_open_connections", "Number of open connections", []string{"pool"}, nil)
     ch <- prometheus.NewDesc("db_in_use_connections", "Connections currently in use", []string{"pool"}, nil)
     ch <- prometheus.NewDesc("db_idle_connections", "Idle connections in pool", []string{"pool"}, nil)
-    ch <- prometheus.NewDesc("db_total_latency_seconds", "Total latency for a connection", []string{"pool"}, nil)
+    ch <- prometheus.NewDesc("db_wait_duration_seconds_total", "Total connection wait duration", []string{"pool"}, nil)
 }
 
 func (c *DBCollector) Collect(ch chan<- prometheus.Metric) {

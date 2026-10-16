@@ -16,7 +16,7 @@ Define a repository interface so business logic can be tested without a database
 ```go
 // Repository interface — the contract
 type UserRepository interface {
-    GetByID(ctx context.Context, id int64) (*User, bool, error)
+    GetByID(ctx context.Context, id int64) (*User, error)
     Create(ctx context.Context, user *User) error
 }
 
@@ -25,16 +25,16 @@ type pgUserRepository struct {
     db *sqlx.DB
 }
 
-func (r *pgUserRepository) GetByID(ctx context.Context, id int64) (*User, bool, error) {
+func (r *pgUserRepository) GetByID(ctx context.Context, id int64) (*User, error) {
     var user User
     err := r.db.GetContext(ctx, &user, "SELECT id, name, email FROM users WHERE id = $1", id)
     if err != nil {
         if errors.Is(err, sql.ErrNoRows) {
-            return nil, false, nil
+            return nil, ErrUserNotFound
         }
-        return nil, false, fmt.Errorf("querying user %d: %w", id, err)
+        return nil, fmt.Errorf("querying user %d: %w", id, err)
     }
-    return &user, true, nil
+    return &user, nil
 }
 ```
 

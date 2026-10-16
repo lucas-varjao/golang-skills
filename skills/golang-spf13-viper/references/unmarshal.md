@@ -72,12 +72,10 @@ Prefer `UnmarshalKey` over `viper.Sub` + `Unmarshal` — fewer nil checks and le
 
 ## time.Duration
 
-Viper's `GetDuration` parses duration strings (`"1h30m"`, `"500ms"`) from config files and env vars. When using `Unmarshal`, mapstructure does not know how to decode a duration string into `time.Duration` by default.
-
-Register a decode hook:
+Viper's `GetDuration` parses duration strings (`"1h30m"`, `"500ms"`) from config files and env vars. `Unmarshal` decodes duration strings too: viper's default decode hook already composes `StringToTimeDurationHookFunc` with a comma-separated string-to-slice hook. When you add a hook for another type, compose `dc.DecodeHook` back in so the defaults survive:
 
 ```go
-import "github.com/mitchellh/mapstructure"
+import "github.com/go-viper/mapstructure/v2"
 
 var cfg Config
 err := viper.Unmarshal(&cfg, func(dc *mapstructure.DecoderConfig) {
@@ -94,7 +92,7 @@ err := viper.Unmarshal(&cfg, func(dc *mapstructure.DecoderConfig) {
 ## net.IP and custom types
 
 ```go
-import "github.com/mitchellh/mapstructure"
+import "github.com/go-viper/mapstructure/v2"
 
 func stringToIPHookFunc() mapstructure.DecodeHookFunc {
     return func(f reflect.Type, t reflect.Type, data interface{}) (interface{}, error) {
