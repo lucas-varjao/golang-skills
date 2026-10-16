@@ -83,7 +83,7 @@ Editor-integrated as "Rename Symbol" (F2 in most gopls-backed editors).
 
 - **Risk:** Low — but treat any refusal as a real semantic hazard to investigate, not friction to route around by hand-editing instead.
 
-→ See `lucas-varjao/golang-skills@golang-naming` skill for what to rename identifiers _to_. This entry covers only _how_ to apply the rename safely at scale.
+This entry covers only _how_ to apply the rename safely at scale.
 
 ## Change Function Declaration (Signature)
 
@@ -124,7 +124,7 @@ Cross-package moves are the manual type-alias/wrapper sequence above — there i
 
 - **Risk:** High.
 
-→ See `lucas-varjao/golang-skills@golang-project-layout` skill for target package layout. See [structural.md](structural.md) for the full type-alias gradual-repair recipe.
+→ See [structural.md](structural.md) for the full type-alias gradual-repair recipe.
 
 ## Split Package / Merge Package
 
@@ -141,8 +141,6 @@ gopls codeaction -exec -kind=source.splitPackage file.go   # experimental; split
 
 - **Risk:** High.
 
-→ See `lucas-varjao/golang-skills@golang-project-layout` skill for target package layout.
-
 ## Replace Nested Conditional with Guard Clauses
 
 - **Motivation:** Deep `if`/`else` nesting forces a reader to hold every outer condition in mind to understand an inner branch; guard clauses let each precondition exit on its own line and leave only the main path in the body.
@@ -155,8 +153,6 @@ gopls codeaction -exec -kind=refactor.rewrite.invertIf file.go:#offset
 ```
 
 - **Risk:** Low.
-
-→ See `lucas-varjao/golang-skills@golang-code-style` skill for the full early-return style rule this refactor works toward.
 
 ## Introduce Parameter Object
 
@@ -229,7 +225,4 @@ Divergent Change and Shotgun Surgery point to opposite fixes even though both ar
 - → See [structural.md](structural.md) for the full type-alias gradual-repair recipe used by Move Function/Field/Type, and for breaking import cycles ahead of a package split or merge.
 - → See [safety-net.md](safety-net.md) for the coverage-adaptive strategy that determines when Sprout/Wrap Method should replace an in-place edit.
 - → See [go-tooling.md](go-tooling.md) for the full gopls code-action reference, `gofmt -r`, `eg`, and `gopatch` invocation details.
-- → See `lucas-varjao/golang-skills@golang-naming` skill for what to rename identifiers _to_.
-- → See `lucas-varjao/golang-skills@golang-project-layout` skill for target package/directory layout.
 - → See `lucas-varjao/golang-skills@golang-design-patterns` skill for options structs, consumer-side interfaces, and interface-dispatch patterns referenced throughout this catalog.
-- → See `lucas-varjao/golang-skills@golang-code-style` skill for the guard-clause/early-return style rule.

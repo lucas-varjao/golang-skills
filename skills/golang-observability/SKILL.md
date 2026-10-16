@@ -59,7 +59,6 @@ When using observability libraries (Prometheus client, OpenTelemetry SDK, vendor
 - → See `lucas-varjao/golang-skills@golang-troubleshooting` skill for using observability signals to diagnose production issues.
 - → See `lucas-varjao/golang-skills@golang-security` skill for protecting pprof endpoints and avoiding PII in logs.
 - → See `lucas-varjao/golang-skills@golang-context` skill for propagating trace context across service boundaries.
-- → See `samber/cc-skills@promql-cli` skill for querying and exploring PromQL expressions against Prometheus from the CLI.
 
 ### Go 1.26+: slog multi-handler
 

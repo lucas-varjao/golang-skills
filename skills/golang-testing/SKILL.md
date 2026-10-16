@@ -1,6 +1,6 @@
 ---
 name: golang-testing
-description: "Production-ready Golang tests — table-driven tests, testify suites and mocks, parallel tests, fuzzing, fixtures, goroutine leak detection with goleak, snapshot testing, code coverage, integration tests, idiomatic test naming. Use when writing or reviewing Go tests, choosing a testing approach, setting up Go test CI, or debugging flaky/slow tests. For testify-specific APIs see `lucas-varjao/golang-skills@golang-stretchr-testify`; for measurement methodology see `lucas-varjao/golang-skills@golang-benchmark`."
+description: "Production-ready Golang tests — table-driven tests, testify suites and mocks, parallel tests, fuzzing, fixtures, goroutine leak detection with goleak, snapshot testing, code coverage, integration tests, idiomatic test naming. Use when writing or reviewing Go tests, choosing a testing approach, setting up Go test CI, or debugging flaky/slow tests. For measurement methodology see `lucas-varjao/golang-skills@golang-benchmark`."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness, and for projects using Golang.
@@ -393,15 +393,13 @@ For mock patterns, test fixtures, and time mocking, see [Mocking](./references/m
 
 ## Enforce with Linters
 
-Many test best practices are enforced automatically by linters: `thelper`, `paralleltest`, `testifylint`. See the `lucas-varjao/golang-skills@golang-lint` skill for configuration and usage.
+Many test best practices are enforced automatically by linters: `thelper`, `paralleltest`, `testifylint`.
 
 ## Cross-References
 
-- → See `lucas-varjao/golang-skills@golang-stretchr-testify` skill for detailed testify API (assert, require, mock, suite)
 - → See `lucas-varjao/golang-skills@golang-database` skill (testing.md) for database integration test patterns
 - → See `lucas-varjao/golang-skills@golang-concurrency` skill for goroutine leak detection with goleak
 - → See `lucas-varjao/golang-skills@golang-continuous-integration` skill for CI test configuration and GitHub Actions workflows
-- → See `lucas-varjao/golang-skills@golang-lint` skill for testifylint and paralleltest configuration
 - → See `lucas-varjao/golang-skills@golang-continuous-integration` skill for automated AI-driven code review in CI using these guidelines
 
 ## Quick Reference

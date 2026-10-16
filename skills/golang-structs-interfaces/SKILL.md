@@ -33,7 +33,7 @@ paths:
 
 Interfaces SHOULD have 1-3 methods. Small interfaces are easier to implement, mock, and compose. If you need a larger contract, compose it from small interfaces:
 
-→ See `lucas-varjao/golang-skills@golang-naming` skill for interface naming conventions (method + "-er" suffix, canonical names)
+Name interfaces with a method name plus the "-er" suffix, using canonical names where they exist.
 
 ```go
 type Reader interface {
@@ -276,11 +276,9 @@ A struct holding a mutex, a channel, or internal pointers breaks when copied: th
 
 ## Cross-References
 
-- → See `lucas-varjao/golang-skills@golang-naming` skill for interface naming conventions (Reader, Closer, Stringer)
 - → See `lucas-varjao/golang-skills@golang-design-patterns` skill for functional options, constructors, and builder patterns
 - → See `lucas-varjao/golang-skills@golang-dependency-injection` skill for DI patterns using interfaces
-- → See `lucas-varjao/golang-skills@golang-code-style` skill for value vs pointer function parameters (distinct from receivers)
-- → See `lucas-varjao/golang-skills@golang-gopls` skill for safe rename and the `implementInterface` code action — renaming a method or receiver that participates in interface satisfaction updates every call site and refuses a rename that would silently break the interface, which grep/sed cannot detect
+- Safe rename and the `implementInterface` code action (gopls) — renaming a method or receiver that participates in interface satisfaction updates every call site and refuses a rename that would silently break the interface, which grep/sed cannot detect
 
 ## Common Mistakes
 

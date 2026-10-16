@@ -1,6 +1,6 @@
 ---
 name: golang-dependency-injection
-description: "Comprehensive guide for dependency injection (DI) in Golang. Covers why DI matters (testability, loose coupling, separation of concerns, lifecycle management), manual constructor injection, and DI library comparison (google/wire, uber-go/dig, uber-go/fx, samber/do). Use this skill when designing service architecture, setting up dependency injection, refactoring tightly coupled code, managing singletons or service factories, or when the user asks about inversion of control, service containers, or wiring dependencies in Go. For a specific DI library, → See `lucas-varjao/golang-skills@golang-google-wire`, `lucas-varjao/golang-skills@golang-uber-dig`, `lucas-varjao/golang-skills@golang-uber-fx`, or `lucas-varjao/golang-skills@golang-samber-do` skills."
+description: "Comprehensive guide for dependency injection (DI) in Golang. Covers why DI matters (testability, loose coupling, separation of concerns, lifecycle management), manual constructor injection, and DI library comparison (google/wire, uber-go/dig, uber-go/fx, samber/do). Use this skill when designing service architecture, setting up dependency injection, refactoring tightly coupled code, managing singletons or service factories, or when the user asks about inversion of control, service containers, or wiring dependencies in Go."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness, and for projects using Golang.
@@ -251,10 +251,8 @@ This is particularly useful for integration tests where you want most services t
 
 ## Cross-References
 
-- → See `lucas-varjao/golang-skills@golang-samber-do` skill for detailed samber/do usage patterns
 - → See `lucas-varjao/golang-skills@golang-structs-interfaces` skill for interface design and composition
 - → See `lucas-varjao/golang-skills@golang-testing` skill for testing with dependency injection
-- → See `lucas-varjao/golang-skills@golang-project-layout` skill for DI initialization placement
 
 ## References
 

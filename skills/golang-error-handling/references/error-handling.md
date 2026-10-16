@@ -94,8 +94,6 @@ func safeHandler(next http.Handler) http.Handler {
 }
 ```
 
-For structured panic recovery with `samber/oops`, see the `lucas-varjao/golang-skills@golang-samber-oops` skill.
-
 ## Why Use `samber/oops`
 
 - **Stack traces** — you see `"connection refused"` but need to know where it originated

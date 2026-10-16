@@ -203,4 +203,3 @@ For full pprof CLI reference (all commands, non-interactive mode, profile interp
 - → See `lucas-varjao/golang-skills@golang-troubleshooting` skill for pprof setup on running services (enable, secure, capture), Delve debugger, GODEBUG flags, root cause methodology
 - → See `lucas-varjao/golang-skills@golang-observability` skill for everyday always-on monitoring, continuous profiling (Pyroscope), distributed tracing (OpenTelemetry)
 - → See `lucas-varjao/golang-skills@golang-testing` skill for general testing practices
-- → See `samber/cc-skills@promql-cli` skill for querying Prometheus runtime metrics in production to validate benchmark findings

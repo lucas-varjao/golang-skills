@@ -41,7 +41,6 @@ Before any Go coding, review, debugging, troubleshooting, or setup task, load th
 
 ### When it gets written
 
-- **At project creation** — the `lucas-varjao/golang-skills@golang-project-layout` skill writes this directive automatically as part of its Initialization Checklist, without asking the user.
 - **On demand** — running `/golang-how-to configure` writes it too (if missing), in addition to any `## Required Go skills` block confirmed in Step 3 below.
 
 ### Insertion point
@@ -88,18 +87,15 @@ Write the always-load directive if it's missing, regardless of what Step 3 decid
 
 ## Step 3 — Confirm the skill set with the user
 
-Confirm which skills to always load — one question, one round of confirmation, not a running back-and-forth. Present the ⭐️ recommended skills as the default selection. Remind the user of the token budget (each always-loaded skill adds its description tokens to every session — the 11 recommended skills add ~1,100 tokens at startup).
+Confirm which skills to always load — one question, one round of confirmation, not a running back-and-forth. Present the ⭐️ recommended skills as the default selection. Remind the user of the token budget (each always-loaded skill adds its description tokens to every session — the 8 recommended skills add ~800 tokens at startup).
 
 Recommended ⭐️ set for most projects:
 
 ```
-golang-code-style
 golang-data-structures
 golang-design-patterns
-golang-documentation
 golang-error-handling
 golang-modernize
-golang-naming
 golang-safety
 golang-security
 golang-testing
@@ -112,7 +108,6 @@ Additional skills to suggest based on codebase context:
 - CI config detected (`.github/workflows/`) → suggest `golang-continuous-integration`
 - Cobra imports detected → suggest `golang-spf13-cobra`
 - Viper imports detected → suggest `golang-spf13-viper`
-- samber/lo imports detected → suggest `golang-samber-lo`
 - Any other library-specific import → suggest the matching library skill
 
 ## Step 4 — Write the block
@@ -169,4 +164,4 @@ To declare an override in a company skill body, add near the top:
 > This skill supersedes `lucas-varjao/golang-skills@golang-error-handling` for [Company] projects.
 ```
 
-Overridable skills: `golang-code-style`, `golang-concurrency`, `golang-context`, `golang-database`, `golang-dependency-injection`, `golang-design-patterns`, `golang-documentation`, `golang-error-handling`, `golang-naming`, `golang-observability`, `golang-structs-interfaces`, `golang-testing`.
+Overridable skills: `golang-concurrency`, `golang-context`, `golang-database`, `golang-dependency-injection`, `golang-design-patterns`, `golang-error-handling`, `golang-observability`, `golang-structs-interfaces`, `golang-testing`.

@@ -110,7 +110,7 @@ Use `-count=1` to disable test caching — cached results can hide flaky service
 
 ### golangci-lint Configuration
 
-Create `.golangci.yml` at the root of the project. See the `lucas-varjao/golang-skills@golang-lint` skill for the recommended configuration.
+Create `.golangci.yml` at the root of the project.
 
 ---
 
@@ -277,4 +277,4 @@ ln -s .agents .copilot
 
 ## Related Skills
 
-See `lucas-varjao/golang-skills@golang-lint`, `lucas-varjao/golang-skills@golang-security`, `lucas-varjao/golang-skills@golang-testing`, `lucas-varjao/golang-skills@golang-dependency-management`, `lucas-varjao/golang-skills@golang-modernize` skills.
+See `lucas-varjao/golang-skills@golang-security`, `lucas-varjao/golang-skills@golang-testing`, `lucas-varjao/golang-skills@golang-dependency-management`, `lucas-varjao/golang-skills@golang-modernize` skills.

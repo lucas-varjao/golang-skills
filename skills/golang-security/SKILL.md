@@ -122,7 +122,7 @@ For the full security review checklist organized by domain (input handling, data
 
 ### Static Analysis & Linting
 
-Security-relevant linters: `bodyclose`, `sqlclosecheck`, `nilerr`, `errcheck`, `govet`, `staticcheck`. See the `lucas-varjao/golang-skills@golang-lint` skill for configuration and usage.
+Security-relevant linters: `bodyclose`, `sqlclosecheck`, `nilerr`, `errcheck`, `govet`, `staticcheck`.
 
 For deeper security-specific analysis:
 
@@ -136,7 +136,7 @@ go get -tool golang.org/x/vuln/cmd/govulncheck@latest
 go tool govulncheck ./...
 ```
 
-To check the known CVEs of a specific module or version without scanning the whole tree (e.g. when vetting a dependency on pkg.go.dev), → See `lucas-varjao/golang-skills@golang-pkg-go-dev` skill.
+To check the known CVEs of a specific module or version without scanning the whole tree (e.g. when vetting a dependency on pkg.go.dev), run `go tool govulncheck <pattern>` instead.
 
 ### Security Testing
 

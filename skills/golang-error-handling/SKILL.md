@@ -1,6 +1,6 @@
 ---
 name: golang-error-handling
-description: "Idiomatic Golang error handling — creation, wrapping with %w, errors.Is/As, errors.Join, custom error types, sentinel errors, panic/recover, the single handling rule, structured logging with slog, HTTP request logging middleware, and samber/oops for production errors. Built to make logs usable at scale with log aggregation 3rd-party tools. Apply when creating, wrapping, inspecting, or logging errors in Go code. For samber/oops specifics → See `lucas-varjao/golang-skills@golang-samber-oops` skill; for slog handler ecosystem → See `lucas-varjao/golang-skills@golang-samber-slog` skill."
+description: "Idiomatic Golang error handling — creation, wrapping with %w, errors.Is/As, errors.Join, custom error types, sentinel errors, panic/recover, the single handling rule, structured logging with slog, HTTP request logging middleware, and samber/oops for production errors. Built to make logs usable at scale with log aggregation 3rd-party tools. Apply when creating, wrapping, inspecting, or logging errors in Go code."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness, and for projects using Golang.
@@ -73,10 +73,8 @@ When auditing error handling across a large codebase, use up to 5 parallel sub-a
 
 ## Cross-References
 
-- → See `lucas-varjao/golang-skills@golang-samber-oops` for full samber/oops API, builder patterns, and logger integration
 - → See `lucas-varjao/golang-skills@golang-observability` for structured logging setup, log levels, and request logging middleware
 - → See `lucas-varjao/golang-skills@golang-safety` for nil interface trap and nil error comparison pitfalls
-- → See `lucas-varjao/golang-skills@golang-naming` for error naming conventions (ErrNotFound, PathError)
 - → See `lucas-varjao/golang-skills@golang-continuous-integration` skill for automated AI-driven code review in CI using these guidelines
 
 ## References

@@ -76,9 +76,9 @@ jobs:
 
             ## Scope — apply these skill guidelines
 
-            - **Code style** — formatting, comment quality, idiomatic Go patterns (Skill("golang-code-style")).
-            - **Naming** — packages, types, variables, functions, constants (Skill("golang-naming")).
-            - **Documentation** — exported symbols, package-level docs, README impact (Skill("golang-documentation")).
+            - **Code style** — formatting, comment quality, idiomatic Go patterns.
+            - **Naming** — packages, types, variables, functions, constants.
+            - **Documentation** — exported symbols, package-level docs, README impact.
 
             ## Priority — suggestion-first
 

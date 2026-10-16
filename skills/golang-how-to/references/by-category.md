@@ -1,17 +1,13 @@
 # Golang skills — full catalog by category
 
-42 skills. Skills marked ⭐️ are recommended for all Go projects. Skills marked ⚙️ can be superseded by a company-specific skill.
+24 skills. Skills marked ⭐️ are recommended for all Go projects. Skills marked ⚙️ can be superseded by a company-specific skill.
 
 ---
 
 ## Table of Contents
 
 - [Code Quality](#code-quality)
-  - [`lucas-varjao/golang-skills@golang-code-style` ⭐️ ⚙️](#lucas-varjaogolang-skillsgolang-code-style-%EF%B8%8F-%EF%B8%8F)
-  - [`lucas-varjao/golang-skills@golang-documentation` ⭐️ ⚙️](#lucas-varjaogolang-skillsgolang-documentation-%EF%B8%8F-%EF%B8%8F)
   - [`lucas-varjao/golang-skills@golang-error-handling` ⭐️ ⚙️](#lucas-varjaogolang-skillsgolang-error-handling-%EF%B8%8F-%EF%B8%8F)
-  - [`lucas-varjao/golang-skills@golang-lint`](#lucas-varjaogolang-skillsgolang-lint)
-  - [`lucas-varjao/golang-skills@golang-naming` ⭐️ ⚙️](#lucas-varjaogolang-skillsgolang-naming-%EF%B8%8F-%EF%B8%8F)
   - [`lucas-varjao/golang-skills@golang-safety` ⭐️](#lucas-varjaogolang-skillsgolang-safety-%EF%B8%8F)
   - [`lucas-varjao/golang-skills@golang-security` ⭐️ 🧠](#lucas-varjaogolang-skillsgolang-security-%EF%B8%8F-)
   - [`lucas-varjao/golang-skills@golang-structs-interfaces` ⚙️](#lucas-varjaogolang-skillsgolang-structs-interfaces-%EF%B8%8F)
@@ -23,6 +19,7 @@
   - [`lucas-varjao/golang-skills@golang-dependency-injection` ⚙️](#lucas-varjaogolang-skillsgolang-dependency-injection-%EF%B8%8F)
   - [`lucas-varjao/golang-skills@golang-design-patterns` ⭐️ ⚙️](#lucas-varjaogolang-skillsgolang-design-patterns-%EF%B8%8F-%EF%B8%8F)
   - [`lucas-varjao/golang-skills@golang-modernize` ⭐️](#lucas-varjaogolang-skillsgolang-modernize-%EF%B8%8F)
+  - [`lucas-varjao/golang-skills@golang-refactoring` 🧠](#lucas-varjaogolang-skillsgolang-refactoring-)
 - [QA & Performance](#qa--performance)
   - [`lucas-varjao/golang-skills@golang-benchmark` 🧠](#lucas-varjaogolang-skillsgolang-benchmark-)
   - [`lucas-varjao/golang-skills@golang-observability` ⚙️](#lucas-varjaogolang-skillsgolang-observability-%EF%B8%8F)
@@ -33,74 +30,20 @@
   - [`lucas-varjao/golang-skills@golang-cli`](#lucas-varjaogolang-skillsgolang-cli)
   - [`lucas-varjao/golang-skills@golang-continuous-integration`](#lucas-varjaogolang-skillsgolang-continuous-integration)
   - [`lucas-varjao/golang-skills@golang-dependency-management`](#lucas-varjaogolang-skillsgolang-dependency-management)
-  - [`lucas-varjao/golang-skills@golang-pkg-go-dev`](#lucas-varjaogolang-skillsgolang-pkg-go-dev)
   - [`lucas-varjao/golang-skills@golang-popular-libraries`](#lucas-varjaogolang-skillsgolang-popular-libraries)
-  - [`lucas-varjao/golang-skills@golang-project-layout`](#lucas-varjaogolang-skillsgolang-project-layout)
-  - [`lucas-varjao/golang-skills@golang-stay-updated`](#lucas-varjaogolang-skillsgolang-stay-updated)
 - [APIs](#apis)
-  - [`lucas-varjao/golang-skills@golang-graphql`](#lucas-varjaogolang-skillsgolang-graphql)
-  - [`lucas-varjao/golang-skills@golang-grpc`](#lucas-varjaogolang-skillsgolang-grpc)
   - [`lucas-varjao/golang-skills@golang-swagger`](#lucas-varjaogolang-skillsgolang-swagger)
-- [Dependency Injection](#dependency-injection)
-  - [`lucas-varjao/golang-skills@golang-dependency-injection` ⚙️](#lucas-varjaogolang-skillsgolang-dependency-injection-%EF%B8%8F-1)
-  - [`lucas-varjao/golang-skills@golang-google-wire`](#lucas-varjaogolang-skillsgolang-google-wire)
-  - [`lucas-varjao/golang-skills@golang-uber-dig`](#lucas-varjaogolang-skillsgolang-uber-dig)
-  - [`lucas-varjao/golang-skills@golang-uber-fx`](#lucas-varjaogolang-skillsgolang-uber-fx)
-  - [`lucas-varjao/golang-skills@golang-samber-do`](#lucas-varjaogolang-skillsgolang-samber-do)
 - [Frameworks](#frameworks)
   - [`lucas-varjao/golang-skills@golang-spf13-cobra`](#lucas-varjaogolang-skillsgolang-spf13-cobra)
   - [`lucas-varjao/golang-skills@golang-spf13-viper`](#lucas-varjaogolang-skillsgolang-spf13-viper)
-- [samber/\*](#samber)
-  - [`lucas-varjao/golang-skills@golang-samber-do`](#lucas-varjaogolang-skillsgolang-samber-do-1)
-  - [`lucas-varjao/golang-skills@golang-samber-hot`](#lucas-varjaogolang-skillsgolang-samber-hot)
-  - [`lucas-varjao/golang-skills@golang-samber-lo`](#lucas-varjaogolang-skillsgolang-samber-lo)
-  - [`lucas-varjao/golang-skills@golang-samber-mo` 🧠](#lucas-varjaogolang-skillsgolang-samber-mo-)
-  - [`lucas-varjao/golang-skills@golang-samber-oops`](#lucas-varjaogolang-skillsgolang-samber-oops)
-  - [`lucas-varjao/golang-skills@golang-samber-ro` 🧠](#lucas-varjaogolang-skillsgolang-samber-ro-)
-  - [`lucas-varjao/golang-skills@golang-samber-slog`](#lucas-varjaogolang-skillsgolang-samber-slog)
-- [Testing](#testing)
-  - [`lucas-varjao/golang-skills@golang-stretchr-testify`](#lucas-varjaogolang-skillsgolang-stretchr-testify)
-  - [`lucas-varjao/golang-skills@golang-testing` ⭐️ 🧠 ⚙️](#lucas-varjaogolang-skillsgolang-testing-%EF%B8%8F--%EF%B8%8F-1)
 
 ## Code Quality
-
-### `lucas-varjao/golang-skills@golang-code-style` ⭐️ ⚙️
-
-Golang code formatting, conventions, and project-level style consistency — gofmt, goimports, line length, var declarations, blank lines, comment heuristics.
-
-Use when: the user asks about formatting rules, style review, or project coding standards. Not for naming conventions (→ `golang-naming`), linter configuration (→ `golang-lint`), or doc comments (→ `golang-documentation`).
-
----
-
-### `lucas-varjao/golang-skills@golang-documentation` ⭐️ ⚙️
-
-Golang documentation standards — package docs, godoc conventions, example functions, README structure, CHANGELOG, llms.txt, API reference generation.
-
-Use when: writing or reviewing Go doc comments, README files, or API reference. Not for code comments that explain logic (→ `golang-code-style`).
-
----
 
 ### `lucas-varjao/golang-skills@golang-error-handling` ⭐️ ⚙️
 
 Golang error handling best practices — error creation, wrapping with fmt.Errorf and errors.Is/As, sentinel errors, custom error types, panic recovery.
 
-Use when: writing or reviewing error propagation, wrapping, logging, or recovery patterns. For samber/oops specifics → `golang-samber-oops`. For preventing panics → `golang-safety`.
-
----
-
-### `lucas-varjao/golang-skills@golang-lint`
-
-Golang linting — golangci-lint configuration, presets, custom rules, CI integration, nolint suppressions, linter selection and output interpretation.
-
-Use when: setting up or tuning golangci-lint, interpreting lint failures, or deciding which linters to enable. For style conventions not enforced by linters → `golang-code-style`.
-
----
-
-### `lucas-varjao/golang-skills@golang-naming` ⭐️ ⚙️
-
-Golang naming conventions across all identifier types — packages, constructors, structs, interfaces, constants, errors, receivers, acronyms, test functions. Covers MixedCaps rules, Get-prefix, and utils/helpers anti-patterns.
-
-Use when: naming a new type, function, package, or constant. Not for broader formatting (→ `golang-code-style`).
+Use when: writing or reviewing error propagation, wrapping, logging, or recovery patterns. For preventing panics → `golang-safety`.
 
 ---
 
@@ -166,7 +109,7 @@ Use when: writing SQL queries, designing repository patterns, or configuring dat
 
 Dependency injection patterns in Golang — constructor injection, interface-based DI, wire/dig/fx comparison, and when DI is worth the complexity.
 
-Use when: deciding whether to use DI, designing constructor signatures, or comparing DI libraries. For a specific DI library → `golang-google-wire`, `golang-uber-dig`, `golang-uber-fx`, or `golang-samber-do`.
+Use when: deciding whether to use DI, designing constructor signatures, or comparing DI libraries.
 
 ---
 
@@ -182,7 +125,15 @@ Use when: choosing architectural patterns, designing APIs, or implementing resil
 
 Modernize Golang code using recent language features — range-over-int, min/max builtins, iterators, slices/maps/cmp/slog stdlib packages, testing patterns (t.Context, b.Loop, synctest), and tooling upgrades.
 
-Use when: upgrading a codebase to a newer Go version or replacing pre-generics patterns. Not for lint rule enforcement (→ `golang-lint`).
+Use when: upgrading a codebase to a newer Go version or replacing pre-generics patterns.
+
+---
+
+### `lucas-varjao/golang-skills@golang-refactoring` 🧠
+
+Safe, at-scale restructuring of existing Go code — coverage-adaptive safety net, behavior-preserving transforms (gopls Rename/Extract, `gofmt -r`, `gopatch`), the Fowler catalog mapped to Go, breaking import cycles, and small stacked PRs.
+
+Use when: a function or type has grown too large, a code smell blocks a feature, or a rename/extract/move has to land without breaking callers. For newer-idiom rewrites → `golang-modernize`.
 
 ---
 
@@ -216,7 +167,7 @@ Use when: applying optimization patterns after profiling. Not for measurement me
 
 Production-ready Golang tests — table-driven tests, fuzzing, fixtures, goroutine leak detection (goleak), snapshot testing, code coverage, integration tests, parallel tests.
 
-Use when: writing or reviewing tests. For testify-specific APIs → `golang-stretchr-testify`. For measurement methodology → `golang-benchmark`.
+Use when: writing or reviewing tests. For measurement methodology → `golang-benchmark`.
 
 ---
 
@@ -254,14 +205,6 @@ Use when: managing go.mod, dealing with replace directives, or structuring a mul
 
 ---
 
-### `lucas-varjao/golang-skills@golang-pkg-go-dev`
-
-Golang package and module exploration via `godig`, a pkg.go.dev API client (CLI + MCP server) — docs, symbols, versions, importers, licenses, and known vulnerabilities.
-
-Use when: looking up a module's available versions, CVEs, docs/symbols, or who imports it, or searching pkg.go.dev. For upgrading deps → `golang-dependency-management`; for choosing a library → `golang-popular-libraries`.
-
----
-
 ### `lucas-varjao/golang-skills@golang-popular-libraries`
 
 Curated recommendations for production-ready Golang libraries — when the stdlib is enough vs when to reach for a package.
@@ -270,85 +213,13 @@ Use when: choosing a library for a new concern (HTTP, logging, testing, etc.). F
 
 ---
 
-### `lucas-varjao/golang-skills@golang-project-layout`
-
-Golang project structure and workspace setup — cmd/internal/pkg conventions, monorepo layout, CLI project structure, and when to keep things flat.
-
-Use when: starting a new project or restructuring an existing one. For architectural patterns within the project → `golang-design-patterns`.
-
----
-
-### `lucas-varjao/golang-skills@golang-stay-updated`
-
-Resources to stay current with Golang — official channels, community hubs, key people to follow, learning resources.
-
-Use when: looking for ways to track Go releases, proposals, and community news.
-
----
-
 ## APIs
-
-### `lucas-varjao/golang-skills@golang-graphql`
-
-GraphQL API development in Golang using gqlgen/graphql-go — schema definition, resolvers, subscriptions, dataloader, federation.
-
-Use when: building a GraphQL API in Go.
-
----
-
-### `lucas-varjao/golang-skills@golang-grpc`
-
-gRPC in Golang — protobuf organization, service definitions, streaming, interceptors, error codes, code generation workflow.
-
-Use when: building or consuming a gRPC service. For OpenAPI/REST documentation → `golang-swagger`.
-
----
 
 ### `lucas-varjao/golang-skills@golang-swagger`
 
 OpenAPI/Swagger docs with swaggo/swag — annotation comments, code generation, framework integrations (gin, echo, fiber, chi), security definitions.
 
 Use when: generating OpenAPI documentation from Go code annotations.
-
----
-
-## Dependency Injection
-
-### `lucas-varjao/golang-skills@golang-dependency-injection` ⚙️
-
-See "Architecture & Design" section above.
-
----
-
-### `lucas-varjao/golang-skills@golang-google-wire`
-
-Compile-time dependency injection with google/wire — provider sets, injector generation, wire.Build, and structured DI patterns.
-
-Use when: the codebase imports `github.com/google/wire` or the team has chosen compile-time DI. For runtime DI with reflection → `golang-uber-dig`.
-
----
-
-### `lucas-varjao/golang-skills@golang-uber-dig`
-
-Reflection-based DI with uber-go/dig — Provide/Invoke, dig.In/dig.Out, named values, value groups, optional dependencies, Decorate.
-
-Use when: the codebase imports `go.uber.org/dig`. For higher-level lifecycle and modules → `golang-uber-fx`.
-
----
-
-### `lucas-varjao/golang-skills@golang-uber-fx`
-
-Application framework with uber-go/fx — fx.New, fx.Provide/Invoke, fx.Module, lifecycle hooks, fx.Annotate, fx.Decorate, signal-aware Run.
-
-Use when: the codebase imports `go.uber.org/fx`. For raw DI without lifecycle → `golang-uber-dig`.
-
----
-
-### `lucas-varjao/golang-skills@golang-samber-do`
-
-Dependency injection with samber/do — type-safe service containers, lifecycle management, scopes, health checks, graceful shutdown.
-
-Use when: the codebase imports `github.com/samber/do`.
 
 ---
 
@@ -367,75 +238,3 @@ Use when: the codebase imports `github.com/spf13/cobra`. For configuration layer
 Layered configuration with spf13/viper — flag > env > file > KV > default precedence, BindPFlag, hot reload, test isolation, remote KV integration.
 
 Use when: the codebase imports `github.com/spf13/viper`. For CLI command structure → `golang-spf13-cobra`. For general CLI architecture → `golang-cli`.
-
----
-
-## samber/\*
-
-### `lucas-varjao/golang-skills@golang-samber-do`
-
-See "Dependency Injection" section above.
-
----
-
-### `lucas-varjao/golang-skills@golang-samber-hot`
-
-In-memory caching with samber/hot — 9 eviction algorithms (LRU, LFU, TinyLFU, W-TinyLFU, S3FIFO, ARC, SIEVE), TTL, loaders, sharding, stale-while-revalidate, Prometheus metrics.
-
-Use when: the codebase imports `github.com/samber/hot`.
-
----
-
-### `lucas-varjao/golang-skills@golang-samber-lo`
-
-Functional programming helpers with samber/lo — 500+ type-safe generic functions for slices, maps, channels, strings. Immutable (lo), parallel (lop), mutable (lom), iterators (loi), SIMD.
-
-Use when: the codebase imports `github.com/samber/lo`. Not for streaming pipelines (→ `golang-samber-ro`).
-
----
-
-### `lucas-varjao/golang-skills@golang-samber-mo` 🧠
-
-Monadic types with samber/mo — Option, Result, Either, Future, IO, Task, State for type-safe nullable values, error handling, and functional composition.
-
-Use when: the codebase imports `github.com/samber/mo`.
-
----
-
-### `lucas-varjao/golang-skills@golang-samber-oops`
-
-Structured error handling with samber/oops — error builders, stack traces, error codes, context attributes, public vs developer messages, panic recovery, APM integration.
-
-Use when: the codebase imports `github.com/samber/oops`.
-
----
-
-### `lucas-varjao/golang-skills@golang-samber-ro` 🧠
-
-Reactive streams with samber/ro — 150+ type-safe operators, cold/hot observables, 5 subject types, 40+ plugins, automatic backpressure, Go context integration.
-
-Use when: the codebase imports `github.com/samber/ro`. Not for finite slice transforms (→ `golang-samber-lo`).
-
----
-
-### `lucas-varjao/golang-skills@golang-samber-slog`
-
-Structured logging pipeline with samber/slog-\* packages — multi-handler routing (slog-multi), sampling, formatting, HTTP middleware, 20+ backend sinks.
-
-Use when: the codebase imports any `github.com/samber/slog-*` package.
-
----
-
-## Testing
-
-### `lucas-varjao/golang-skills@golang-stretchr-testify`
-
-Testing with stretchr/testify — assert, require, mock, and suite packages. Assertions, mock expectations, argument matchers, suite lifecycle, custom matchers.
-
-Use when: the codebase imports `github.com/stretchr/testify`. For test architecture and strategy → `golang-testing`.
-
----
-
-### `lucas-varjao/golang-skills@golang-testing` ⭐️ 🧠 ⚙️
-
-See "QA & Performance" section above.

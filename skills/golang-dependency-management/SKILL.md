@@ -78,7 +78,7 @@ go get github.com/google/uuid@latest   # Explicitly latest
 go get github.com/google/uuid@<commit> # Specific commit (pseudo-version)
 ```
 
-Before pinning a version, inspect the module's available versions, importers, and known vulnerabilities on pkg.go.dev → See `lucas-varjao/golang-skills@golang-pkg-go-dev` skill.
+Before pinning a version, inspect the module's available versions, importers, and known vulnerabilities on pkg.go.dev.
 
 ### Upgrading
 

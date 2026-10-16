@@ -223,12 +223,12 @@ type CreateUserRequest struct {
 ## Cross-References
 
 - → See `lucas-varjao/golang-skills@golang-security` for securing the Swagger UI endpoint in production (disable or gate with auth middleware).
-- → See `lucas-varjao/golang-skills@golang-grpc` for gRPC — use grpc-gateway with its own OpenAPI generator instead of swag.
+- For gRPC, use grpc-gateway with its own OpenAPI generator instead of swag.
 
 This skill is not exhaustive — refer to the swaggo/swag documentation and code examples for up-to-date API signatures and usage patterns:
 
-- For Go package docs, symbols, versions, importers, and known vulnerabilities, → See `lucas-varjao/golang-skills@golang-pkg-go-dev` skill (`godig`), preferred over Context7 for Go package facts.
-- To navigate this library's usage in your own code (definitions, call sites, diagnostics), → See `lucas-varjao/golang-skills@golang-gopls` skill (`gopls`).
+- For Go package docs, symbols, versions, importers, and known vulnerabilities, use `godig` or pkg.go.dev, preferred over Context7 for Go package facts.
+- To navigate this library's usage in your own code (definitions, call sites, diagnostics), use `gopls`.
 - Context7 remains a fallback for docs not indexed on pkg.go.dev.
 
 If you encounter a bug or unexpected behavior in swag, open an issue at <https://github.com/swaggo/swag/issues>.

@@ -204,4 +204,4 @@ Use `cmd.OutOrStdout()` and `cmd.ErrOrStderr()` in commands (instead of `os.Stdo
 
 ## Related Skills
 
-See `lucas-varjao/golang-skills@golang-project-layout`, `lucas-varjao/golang-skills@golang-dependency-injection`, `lucas-varjao/golang-skills@golang-testing`, `lucas-varjao/golang-skills@golang-design-patterns` skills.
+See `lucas-varjao/golang-skills@golang-dependency-injection`, `lucas-varjao/golang-skills@golang-testing`, `lucas-varjao/golang-skills@golang-design-patterns` skills.

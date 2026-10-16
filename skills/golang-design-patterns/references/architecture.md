@@ -7,7 +7,6 @@
 - [Fail Fast — Validate at Boundaries](#fail-fast--validate-at-boundaries)
 - [Make Illegal States Unrepresentable](#make-illegal-states-unrepresentable)
 - [Detailed Architecture Guides](#detailed-architecture-guides)
-- [12-Factor App Principles](#12-factor-app-principles)
 - [Explicit Over Implicit](#explicit-over-implicit)
 
 ## Choose the Right Level of Architecture
@@ -126,10 +125,6 @@ For projects that warrant a formal architecture (typically 5K+ lines), see the d
 - [Clean Architecture](./clean-architecture.md) — use cases, dependency rule, layered adapters
 - [Hexagonal Architecture](./hexagonal-architecture.md) — ports, adapters, domain core isolation
 
-## 12-Factor App Principles
-
-→ See `lucas-varjao/golang-skills@golang-project-layout` for 12-Factor App conventions.
-
 ## Explicit Over Implicit
 
 Go favors explicitness. Code should express its intent clearly without requiring the reader to know hidden conventions:
@@ -157,5 +152,3 @@ func (h *Handler) HandleRequest(w http.ResponseWriter, r *http.Request) {
     user := h.db.FindUser(r.Context(), userID) // clear: db is a field on Handler
 }
 ```
-
-→ See `lucas-varjao/golang-skills@golang-project-layout` skill for directory structure and layout patterns.

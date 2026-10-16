@@ -45,7 +45,7 @@ Idiomatic Go patterns for production-ready code. For error handling details see 
 9. Every external call SHOULD **have a timeout** — a slow upstream hangs your goroutine indefinitely
 10. **Limit everything** (pool sizes, queue depths, buffers) — unbounded resources grow until they crash
 11. Retry logic MUST **check context cancellation** between attempts
-12. **Use `strings.Builder`** for concatenation in loops → see `lucas-varjao/golang-skills@golang-code-style`
+12. **Use `strings.Builder`** for concatenation in loops
 13. string vs []byte: **use `[]byte` for mutation and I/O**, `string` for display and keys — conversions allocate
 14. Iterators (Go 1.23+): **use for lazy evaluation** — avoid loading everything into memory
 15. **Stream large transfers** — loading millions of rows causes OOM; stream keeps memory constant
@@ -177,7 +177,7 @@ var version string
 
 ## Error Flow Patterns
 
-Error cases MUST be handled first with early return — keep the happy path at minimal indentation. → See `lucas-varjao/golang-skills@golang-code-style` for the full pattern and examples.
+Error cases MUST be handled first with early return — keep the happy path at minimal indentation.
 
 ### When to Panic vs Return Error
 
@@ -251,7 +251,7 @@ Core principles regardless of architecture:
 - **Keep domain pure** — no framework dependencies in the domain layer
 - **Fail fast** — validate at boundaries, trust internal code
 - **Make illegal states unrepresentable** — use types to enforce invariants
-- **Respect 12-factor app** principles — → see `lucas-varjao/golang-skills@golang-project-layout`
+- **Respect 12-factor app** principles
 
 ## Detailed Guides
 
@@ -275,5 +275,4 @@ Core principles regardless of architecture:
 - → See `lucas-varjao/golang-skills@golang-structs-interfaces` skill for interface design and composition
 - → See `lucas-varjao/golang-skills@golang-concurrency` skill for goroutine lifecycle and graceful shutdown
 - → See `lucas-varjao/golang-skills@golang-context` skill for timeout and cancellation patterns
-- → See `lucas-varjao/golang-skills@golang-project-layout` skill for architecture and directory structure
 - → See `lucas-varjao/golang-skills@golang-refactoring` skill for safely staging a migration toward one of these patterns (options struct, DI, consumer-side interfaces) across an existing codebase

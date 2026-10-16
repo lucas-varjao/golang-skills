@@ -243,7 +243,7 @@ func (db *DB) connection() *sql.DB {
 
 ## Enforce with Linters
 
-Many safety pitfalls are caught automatically by linters: `errcheck`, `forcetypeassert`, `nilerr`, `govet`, `staticcheck`. See the `lucas-varjao/golang-skills@golang-lint` skill for configuration and usage.
+Many safety pitfalls are caught automatically by linters: `errcheck`, `forcetypeassert`, `nilerr`, `govet`, `staticcheck`.
 
 ### Go 1.25+ reflection type assertions
 

@@ -1,7 +1,5 @@
 # samber/do — Generics-Based DI
 
-> **For the full samber/do API, patterns, and advanced features, see the `lucas-varjao/golang-skills@golang-samber-do` skill.**
-
 Type-safe dependency injection using Go generics. No reflection, no code generation, simple API.
 
 - Docs: [do.samber.dev](https://do.samber.dev) | [github.com/samber/do/v2](https://github.com/samber/do)
@@ -32,5 +30,3 @@ injector.ShutdownOnSignalsWithContext(ctx, os.Interrupt)
 - **Container cloning** — create isolated test containers from production configuration
 - **Simple API** — `Provide`, `Invoke`, `Shutdown` — that's most of what you need
 - **Package system** — organize services by domain without manual wiring order
-
-→ See `lucas-varjao/golang-skills@golang-samber-do` for full application setup, package organization, lifecycle management, debugging, testing with clone + override, and complete API reference.

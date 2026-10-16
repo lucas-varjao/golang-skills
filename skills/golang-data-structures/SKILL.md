@@ -164,8 +164,6 @@ For advanced data structures (trees, sets, queues, stacks) beyond the standard l
 
 When using third-party libraries, refer to their official documentation and code examples for current API signatures.
 
-- For Go package docs, symbols, versions, importers, and known vulnerabilities, → See `lucas-varjao/golang-skills@golang-pkg-go-dev` skill (`godig`) — prefer it over Context7 for Go package facts.
-- To navigate this library's usage in your own code (definitions, call sites, diagnostics), → See `lucas-varjao/golang-skills@golang-gopls` skill (`gopls`).
 - Context7 remains a fallback for docs not indexed on pkg.go.dev.
 
 ## Cross-References
@@ -175,7 +173,6 @@ When using third-party libraries, refer to their official documentation and code
 - → See `lucas-varjao/golang-skills@golang-concurrency` skill for channels, `sync.Map`, `sync.Pool`, and all sync primitives
 - → See `lucas-varjao/golang-skills@golang-design-patterns` skill for `string` vs `[]byte` vs `[]rune`, iterators, streaming
 - → See `lucas-varjao/golang-skills@golang-structs-interfaces` skill for struct composition, embedding, and generics vs `any`
-- → See `lucas-varjao/golang-skills@golang-code-style` skill for slice/map initialization style
 
 ## Common Mistakes
 

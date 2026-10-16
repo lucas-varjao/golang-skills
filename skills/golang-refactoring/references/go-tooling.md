@@ -20,7 +20,6 @@ This file is the tool reference for `lucas-varjao/golang-skills@golang-refactori
 
 - gopls performs most of this skill's Low- and Medium-risk transforms — Rename, Inline, Extract, and the `refactor.rewrite.*` family.
 - See the Risk Stratification table in [SKILL.md](../SKILL.md) and the `Tool:` line on each entry in [catalog.md](catalog.md) for which gopls action maps to which refactoring.
-- The full code-action reference, CLI invocation, safety behavior, and MCP server setup belong to `lucas-varjao/golang-skills@golang-gopls` — this file covers the tools that skill doesn't.
 
 ## 2. Bulk Mechanical Rewrite Tools
 

@@ -23,7 +23,7 @@
   - find every reference to the symbols you intend to change
   - walk the call hierarchy in both directions
   - check the package's exported API surface for anything an external module might depend on
-- Workspace symbol search and `gopls codeaction` surface the mechanical options available at each site — its day-to-day mechanics (rename, browsing references, call hierarchy) are owned by the `lucas-varjao/golang-skills@golang-gopls` skill.
+- Workspace symbol search and `gopls codeaction` surface the mechanical options available at each site.
 
 Once the blast radius is mapped, turn it into a **refactoring inventory** — one row per atomic change, so the whole refactor is visible as a single artifact before any PR exists:
 

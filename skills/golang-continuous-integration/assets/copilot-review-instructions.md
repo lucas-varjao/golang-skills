@@ -21,8 +21,8 @@ Relevant skills should be loaded before reviewing the diff.
 
 Cover each area below. Where a dedicated skill is listed, apply its guidance.
 
-- **Code style** — formatting, comment quality, idiomatic Go patterns (`.copilot/skills/golang-code-style/SKILL.md`)
-- **Naming** — packages, types, variables, functions, constants (`.copilot/skills/golang-naming/SKILL.md`)
+- **Code style** — formatting, comment quality, idiomatic Go patterns
+- **Naming** — packages, types, variables, functions, constants
 - **Error handling** — wrapping, sentinel errors, log-and-return, swallowed errors (`.copilot/skills/golang-error-handling/SKILL.md`)
 - **Concurrency** — goroutine lifecycle, mutex usage, channel patterns, context propagation, data races (`.copilot/skills/golang-concurrency/SKILL.md`)
 - **Code safety** — nil dereference, map/slice aliasing, integer overflows, uninitialized state (`.copilot/skills/golang-safety/SKILL.md`)
@@ -30,7 +30,7 @@ Cover each area below. Where a dedicated skill is listed, apply its guidance.
 - **Performance** — unnecessary allocations, inefficient data structures, missing bounds (`.copilot/skills/golang-performance/SKILL.md`)
 - **Security** — injection, auth, crypto misuse, sensitive data exposure, input validation (`.copilot/skills/golang-security/SKILL.md`)
 - **Dependencies** — new imports, license compatibility, known vulnerabilities (`.copilot/skills/golang-dependency-management/SKILL.md`)
-- **Documentation** — exported symbols, package docs, README impact (`.copilot/skills/golang-documentation/SKILL.md`)
+- **Documentation** — exported symbols, package docs, README impact
 - **Observability** — logging, metrics, tracing added for new code paths (`.copilot/skills/golang-observability/SKILL.md`)
 - **Modernize code** — outdated patterns replaced with Go 1.21+ idioms (`.copilot/skills/golang-modernize/SKILL.md`)
 

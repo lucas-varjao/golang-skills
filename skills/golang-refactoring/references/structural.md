@@ -95,7 +95,7 @@ order/
 - **Caveat: this is a heuristic, not dogma.**
   - Don't mechanically split every struct into an interface-plus-implementation pair on the theory that it's "more testable" — a concrete struct with no interface is simpler to read, and an interface with exactly one implementation and no test-double need is pure indirection.
   - Don't return an interface from a constructor just because "it might be more flexible later" — that flexibility has a name (YAGNI) and a cost (the caller loses type information it might have wanted).
-  - → See `lucas-varjao/golang-skills@golang-project-layout` skill for the directory/package layout conventions this section assumes, and `lucas-varjao/golang-skills@golang-design-patterns` skill for judging when introducing an interface is the right call versus premature abstraction.
+  - → See `lucas-varjao/golang-skills@golang-design-patterns` skill for judging when introducing an interface is the right call versus premature abstraction.
 
 ### Splitting a god package
 
@@ -190,7 +190,6 @@ retract (
 
 ## Cross-References
 
-- → See `lucas-varjao/golang-skills@golang-project-layout` skill for directory/package layout conventions.
 - → See `lucas-varjao/golang-skills@golang-design-patterns` skill for when an interface is the right design choice versus premature abstraction, and for constructor/DI patterns.
 - → See [catalog.md](catalog.md) in this skill for the Fowler catalog entries (Extract Interface, Change Function Declaration, Move Function) these structural moves build on.
 - → See [workflow.md](workflow.md) in this skill for staging a cross-package move or package split as an ordered sequence of small PRs.

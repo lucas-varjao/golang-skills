@@ -57,7 +57,7 @@ When invoked:
 8. **Before suggesting a dependency update**, run `go mod tidy` and the test suite to verify compatibility. Ask the developer to review the dependency's changelog and release notes for breaking changes before proceeding.
 9. **If the developer explicitly ignores a suggestion**, write a short memo to `.modernize` in the project root so it is not suggested again. Format: one line per ignored suggestion, with a short description.
 
-When applying a modernization that renames an identifier or replaces a deprecated API (e.g. `reflect.PtrTo` → `PointerTo`, `math/rand` → `math/rand/v2`), → See `lucas-varjao/golang-skills@golang-gopls` skill — safe rename updates every call site and refuses a rename that would break interface satisfaction, and post-edit diagnostics catch compile errors across the rewritten files that a blind Edit or grep/sed sweep would leave broken.
+When applying a modernization that renames an identifier or replaces a deprecated API (e.g. `reflect.PtrTo` → `PointerTo`, `math/rand` → `math/rand/v2`), gopls safe rename updates every call site and refuses a rename that would break interface satisfaction, and post-edit diagnostics catch compile errors across the rewritten files that a blind Edit or grep/sed sweep would leave broken.
 
 ### `.modernize` file format
 
@@ -88,7 +88,7 @@ When the project's `go.mod` targets an older version, suggest upgrading and expl
 
 ## Using the modernize linter
 
-The `modernize` linter (available since **golangci-lint v2.6.0**) automatically detects code that can be rewritten using newer Go features. It originates from `golang.org/x/tools/go/analysis/passes/modernize`; `gopls` and `go fix` (rewritten onto the `go/analysis` framework in Go 1.26, with fixer coverage still growing in Go 1.27 — see [Tooling modernization](./references/tooling.md) for the exact fixer list) cover overlapping modernization checks, but exact coverage differs by tool version. See the `lucas-varjao/golang-skills@golang-lint` skill for configuration.
+The `modernize` linter (available since **golangci-lint v2.6.0**) automatically detects code that can be rewritten using newer Go features. It originates from `golang.org/x/tools/go/analysis/passes/modernize`; `gopls` and `go fix` (rewritten onto the `go/analysis` framework in Go 1.26, with fixer coverage still growing in Go 1.27 — see [Tooling modernization](./references/tooling.md) for the exact fixer list) cover overlapping modernization checks, but exact coverage differs by tool version.
 
 ## Version-specific modernizations
 
@@ -167,6 +167,6 @@ When modernizing a codebase, prioritize changes by impact:
 
 ## Related Skills
 
-See `lucas-varjao/golang-skills@golang-concurrency`, `lucas-varjao/golang-skills@golang-testing`, `lucas-varjao/golang-skills@golang-observability`, `lucas-varjao/golang-skills@golang-error-handling`, `lucas-varjao/golang-skills@golang-lint`, `lucas-varjao/golang-skills@golang-continuous-integration` skills.
+See `lucas-varjao/golang-skills@golang-concurrency`, `lucas-varjao/golang-skills@golang-testing`, `lucas-varjao/golang-skills@golang-observability`, `lucas-varjao/golang-skills@golang-error-handling`, `lucas-varjao/golang-skills@golang-continuous-integration` skills.
 
 - → See `lucas-varjao/golang-skills@golang-refactoring` skill for staging a large modernization sweep as small human-reviewed PRs instead of one big worktree sweep.

@@ -33,8 +33,8 @@ Viper resolves configuration values from multiple sources in a fixed precedence 
 
 This skill is not exhaustive — refer to library documentation and code examples for more information:
 
-- For Go package docs, symbols, versions, importers, and known vulnerabilities, → See `lucas-varjao/golang-skills@golang-pkg-go-dev` skill (`godig`), preferred over Context7 for Go package facts.
-- To navigate this library's usage in your own code (definitions, call sites, diagnostics), → See `lucas-varjao/golang-skills@golang-gopls` skill (`gopls`).
+- For Go package docs, symbols, versions, importers, and known vulnerabilities, use `godig` or pkg.go.dev, preferred over Context7 for Go package facts.
+- To navigate this library's usage in your own code (definitions, call sites, diagnostics), use `gopls`.
 - Context7 remains a fallback for docs not indexed on pkg.go.dev.
 
 ```bash
