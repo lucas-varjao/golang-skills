@@ -1,6 +1,6 @@
 ---
 name: golang-observability
-description: "Golang everyday observability — the always-on signals in production. Covers structured logging with slog, Prometheus metrics, OpenTelemetry distributed tracing, continuous profiling with pprof/Pyroscope, server-side RUM event tracking, alerting, and Grafana dashboards. Apply when instrumenting Go services for production monitoring, setting up metrics or alerting, adding OpenTelemetry tracing, correlating logs with traces, migrating legacy loggers (zap/logrus/zerolog) to slog, adding observability to new features, or implementing GDPR/CCPA-compliant tracking with Customer Data Platforms (CDP). Not for temporary deep-dive performance investigation (→ See `samber/cc-skills-golang@golang-benchmark` and `samber/cc-skills-golang@golang-performance` skills)."
+description: "Golang everyday observability — the always-on signals in production. Covers structured logging with slog, Prometheus metrics, OpenTelemetry distributed tracing, continuous profiling with pprof/Pyroscope, server-side RUM event tracking, alerting, and Grafana dashboards. Apply when instrumenting Go services for production monitoring, setting up metrics or alerting, adding OpenTelemetry tracing, correlating logs with traces, migrating legacy loggers (zap/logrus/zerolog) to slog, adding observability to new features, or implementing GDPR/CCPA-compliant tracking with Customer Data Platforms (CDP). Not for temporary deep-dive performance investigation (→ See `lucas-varjao/golang-skills@golang-benchmark` and `lucas-varjao/golang-skills@golang-performance` skills)."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness, and for projects using Golang.
@@ -9,7 +9,7 @@ metadata:
   version: "1.3.2"
   openclaw:
     emoji: "📡"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/lucas-varjao/golang-skills
     requires:
       bins:
         - go
@@ -29,7 +29,7 @@ paths:
 - **Review mode** — reviewing a PR's instrumentation changes. Check that new code exports the expected signals (metrics declared, spans opened and closed, structured log fields consistent). Sequential.
 - **Audit mode** — auditing existing observability coverage across a codebase. Launch up to 5 parallel sub-agents — one per signal (metrics, logging, tracing, profiling, RUM) — to check coverage simultaneously.
 
-> **Community default.** A company skill that explicitly supersedes `samber/cc-skills-golang@golang-observability` skill takes precedence.
+> **Community default.** A company skill that explicitly supersedes `lucas-varjao/golang-skills@golang-observability` skill takes precedence.
 
 # Go Observability Best Practices
 
@@ -55,10 +55,10 @@ When using observability libraries (Prometheus client, OpenTelemetry SDK, vendor
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-error-handling` skill for the single handling rule.
-- → See `samber/cc-skills-golang@golang-troubleshooting` skill for using observability signals to diagnose production issues.
-- → See `samber/cc-skills-golang@golang-security` skill for protecting pprof endpoints and avoiding PII in logs.
-- → See `samber/cc-skills-golang@golang-context` skill for propagating trace context across service boundaries.
+- → See `lucas-varjao/golang-skills@golang-error-handling` skill for the single handling rule.
+- → See `lucas-varjao/golang-skills@golang-troubleshooting` skill for using observability signals to diagnose production issues.
+- → See `lucas-varjao/golang-skills@golang-security` skill for protecting pprof endpoints and avoiding PII in logs.
+- → See `lucas-varjao/golang-skills@golang-context` skill for propagating trace context across service boundaries.
 - → See `samber/cc-skills@promql-cli` skill for querying and exploring PromQL expressions against Prometheus from the CLI.
 
 ### Go 1.26+: slog multi-handler

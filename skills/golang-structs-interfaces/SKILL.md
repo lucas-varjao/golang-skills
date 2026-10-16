@@ -9,7 +9,7 @@ metadata:
   version: "1.2.1"
   openclaw:
     emoji: "🧩"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/lucas-varjao/golang-skills
     requires:
       bins:
         - go
@@ -21,7 +21,7 @@ paths:
 
 **Persona:** You are a Go type system designer. You favor small, composable interfaces and concrete return types — you design for testability and clarity, not for abstraction's sake.
 
-> **Community default.** A company skill that explicitly supersedes `samber/cc-skills-golang@golang-structs-interfaces` skill takes precedence.
+> **Community default.** A company skill that explicitly supersedes `lucas-varjao/golang-skills@golang-structs-interfaces` skill takes precedence.
 
 # Go Structs & Interfaces
 
@@ -33,7 +33,7 @@ paths:
 
 Interfaces SHOULD have 1-3 methods. Small interfaces are easier to implement, mock, and compose. If you need a larger contract, compose it from small interfaces:
 
-→ See `samber/cc-skills-golang@golang-naming` skill for interface naming conventions (method + "-er" suffix, canonical names)
+→ See `lucas-varjao/golang-skills@golang-naming` skill for interface naming conventions (method + "-er" suffix, canonical names)
 
 ```go
 type Reader interface {
@@ -276,11 +276,11 @@ A struct holding a mutex, a channel, or internal pointers breaks when copied: th
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-naming` skill for interface naming conventions (Reader, Closer, Stringer)
-- → See `samber/cc-skills-golang@golang-design-patterns` skill for functional options, constructors, and builder patterns
-- → See `samber/cc-skills-golang@golang-dependency-injection` skill for DI patterns using interfaces
-- → See `samber/cc-skills-golang@golang-code-style` skill for value vs pointer function parameters (distinct from receivers)
-- → See `samber/cc-skills-golang@golang-gopls` skill for safe rename and the `implementInterface` code action — renaming a method or receiver that participates in interface satisfaction updates every call site and refuses a rename that would silently break the interface, which grep/sed cannot detect
+- → See `lucas-varjao/golang-skills@golang-naming` skill for interface naming conventions (Reader, Closer, Stringer)
+- → See `lucas-varjao/golang-skills@golang-design-patterns` skill for functional options, constructors, and builder patterns
+- → See `lucas-varjao/golang-skills@golang-dependency-injection` skill for DI patterns using interfaces
+- → See `lucas-varjao/golang-skills@golang-code-style` skill for value vs pointer function parameters (distinct from receivers)
+- → See `lucas-varjao/golang-skills@golang-gopls` skill for safe rename and the `implementInterface` code action — renaming a method or receiver that participates in interface satisfaction updates every call site and refuses a rename that would silently break the interface, which grep/sed cannot detect
 
 ## Common Mistakes
 

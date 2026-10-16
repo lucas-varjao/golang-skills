@@ -1,6 +1,6 @@
 ---
 name: golang-troubleshooting
-description: "Troubleshoot Golang programs systematically - find and fix the root cause. Use when encountering bugs, crashes, deadlocks, races, or unexpected behavior in Go code. Covers debugging methodology, common Go pitfalls, test-driven debugging, pprof setup and capture, Delve, race detection, GODEBUG tracing, and production debugging. Start here for any 'something is wrong' situation. Not for interpreting profiles or benchmarking (→ See `samber/cc-skills-golang@golang-benchmark` skill), applying optimization patterns (→ See `samber/cc-skills-golang@golang-performance` skill), or designing new code (→ See `samber/cc-skills-golang@golang-safety` skill for defensive coding, `samber/cc-skills-golang@golang-concurrency` skill for concurrency design)."
+description: "Troubleshoot Golang programs systematically - find and fix the root cause. Use when encountering bugs, crashes, deadlocks, races, or unexpected behavior in Go code. Covers debugging methodology, common Go pitfalls, test-driven debugging, pprof setup and capture, Delve, race detection, GODEBUG tracing, and production debugging. Start here for any 'something is wrong' situation. Not for interpreting profiles or benchmarking (→ See `lucas-varjao/golang-skills@golang-benchmark` skill), applying optimization patterns (→ See `lucas-varjao/golang-skills@golang-performance` skill), or designing new code (→ See `lucas-varjao/golang-skills@golang-safety` skill for defensive coding, `lucas-varjao/golang-skills@golang-concurrency` skill for concurrency design)."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness, and for projects using Golang.
@@ -9,7 +9,7 @@ metadata:
   version: "1.3.1"
   openclaw:
     emoji: "🔍"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/lucas-varjao/golang-skills
     requires:
       bins:
         - go
@@ -144,7 +144,7 @@ When you don't understand the issue:
 
 Before flagging a bug or proposing a fix, trace the data flow and check for upstream handling. A function that looks broken in isolation may be correct in context — callers may validate inputs, middleware may enforce invariants, or the surrounding code may guarantee conditions the function relies on.
 
-1. **Trace callers** — who calls this function and with what values? Call sites can be found with code search tools. → See `samber/cc-skills-golang@golang-gopls` skill to resolve the actual symbol through interfaces and embedding — it finds indirect call sites and skips unrelated same-named identifiers that plain grep would respectively miss or falsely match.
+1. **Trace callers** — who calls this function and with what values? Call sites can be found with code search tools. → See `lucas-varjao/golang-skills@golang-gopls` skill to resolve the actual symbol through interfaces and embedding — it finds indirect call sites and skips unrelated same-named identifiers that plain grep would respectively miss or falsely match.
 2. **Check upstream validation** — input parsing, type conversions, or guard clauses earlier in the chain may make the "bug" unreachable.
 3. **Read the surrounding code** — middleware, interceptors, or init functions may set up state the function depends on.
 
@@ -190,7 +190,7 @@ If any of these are happening, stop and return to Step 1:
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-performance` skill for optimization patterns after identifying bottlenecks
-- → See `samber/cc-skills-golang@golang-observability` skill for metrics, alerting, and Grafana dashboards for Go runtime monitoring
+- → See `lucas-varjao/golang-skills@golang-performance` skill for optimization patterns after identifying bottlenecks
+- → See `lucas-varjao/golang-skills@golang-observability` skill for metrics, alerting, and Grafana dashboards for Go runtime monitoring
 - → See `samber/cc-skills@promql-cli` skill for querying Prometheus metrics during production incident investigation
-- → See `samber/cc-skills-golang@golang-concurrency`, `samber/cc-skills-golang@golang-safety`, `samber/cc-skills-golang@golang-error-handling` skills
+- → See `lucas-varjao/golang-skills@golang-concurrency`, `lucas-varjao/golang-skills@golang-safety`, `lucas-varjao/golang-skills@golang-error-handling` skills

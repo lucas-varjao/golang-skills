@@ -11,7 +11,7 @@
 
 Create interfaces for your dependencies, then mock them.
 
-> For the full testify/mock API (argument matchers, call modifiers, verification), see the `samber/cc-skills-golang@golang-stretchr-testify` skill.
+> For the full testify/mock API (argument matchers, call modifiers, verification), see the `lucas-varjao/golang-skills@golang-stretchr-testify` skill.
 
 ```go
 // Define the interface

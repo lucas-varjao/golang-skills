@@ -1,6 +1,6 @@
 ---
 name: golang-security
-description: "Security best practices and vulnerability prevention for Golang — injection (SQL, command, XSS), cryptography, path traversal, SSRF and HTTP security headers, cookies, secrets management, memory safety, PII in logs, STRIDE/DREAD threat modeling, plus `gosec` SAST, race detection, and fuzz testing. Apply when writing, reviewing, or auditing Go code for security, or when touching crypto, file or network I/O, secrets, user input, or authentication. Not for non-exploitable defensive bugs such as nil panics or slice aliasing (→ See `samber/cc-skills-golang@golang-safety` skill), dependency vulnerability scanning with govulncheck (→ See `samber/cc-skills-golang@golang-dependency-management` skill), or wiring security scanners into CI pipelines (→ See `samber/cc-skills-golang@golang-continuous-integration` skill)."
+description: "Security best practices and vulnerability prevention for Golang — injection (SQL, command, XSS), cryptography, path traversal, SSRF and HTTP security headers, cookies, secrets management, memory safety, PII in logs, STRIDE/DREAD threat modeling, plus `gosec` SAST, race detection, and fuzz testing. Apply when writing, reviewing, or auditing Go code for security, or when touching crypto, file or network I/O, secrets, user input, or authentication. Not for non-exploitable defensive bugs such as nil panics or slice aliasing (→ See `lucas-varjao/golang-skills@golang-safety` skill), dependency vulnerability scanning with govulncheck (→ See `lucas-varjao/golang-skills@golang-dependency-management` skill), or wiring security scanners into CI pipelines (→ See `lucas-varjao/golang-skills@golang-continuous-integration` skill)."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness, and for projects using Golang.
@@ -9,7 +9,7 @@ metadata:
   version: "1.2.2"
   openclaw:
     emoji: "🔒"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/lucas-varjao/golang-skills
     requires:
       bins:
         - go
@@ -122,7 +122,7 @@ For the full security review checklist organized by domain (input handling, data
 
 ### Static Analysis & Linting
 
-Security-relevant linters: `bodyclose`, `sqlclosecheck`, `nilerr`, `errcheck`, `govet`, `staticcheck`. See the `samber/cc-skills-golang@golang-lint` skill for configuration and usage.
+Security-relevant linters: `bodyclose`, `sqlclosecheck`, `nilerr`, `errcheck`, `govet`, `staticcheck`. See the `lucas-varjao/golang-skills@golang-lint` skill for configuration and usage.
 
 For deeper security-specific analysis:
 
@@ -136,7 +136,7 @@ go get -tool golang.org/x/vuln/cmd/govulncheck@latest
 go tool govulncheck ./...
 ```
 
-To check the known CVEs of a specific module or version without scanning the whole tree (e.g. when vetting a dependency on pkg.go.dev), → See `samber/cc-skills-golang@golang-pkg-go-dev` skill.
+To check the known CVEs of a specific module or version without scanning the whole tree (e.g. when vetting a dependency on pkg.go.dev), → See `lucas-varjao/golang-skills@golang-pkg-go-dev` skill.
 
 ### Security Testing
 
@@ -179,9 +179,9 @@ See **[Security Architecture](./references/architecture.md)** for detailed anti-
 
 ## Cross-References
 
-See `samber/cc-skills-golang@golang-database`, `samber/cc-skills-golang@golang-safety`, `samber/cc-skills-golang@golang-observability`, `samber/cc-skills-golang@golang-continuous-integration` skills.
+See `lucas-varjao/golang-skills@golang-database`, `lucas-varjao/golang-skills@golang-safety`, `lucas-varjao/golang-skills@golang-observability`, `lucas-varjao/golang-skills@golang-continuous-integration` skills.
 
-- → See `samber/cc-skills-golang@golang-continuous-integration` skill for automated AI-driven code review in CI using these guidelines
+- → See `lucas-varjao/golang-skills@golang-continuous-integration` skill for automated AI-driven code review in CI using these guidelines
 
 ## Additional Resources
 

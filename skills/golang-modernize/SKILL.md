@@ -1,6 +1,6 @@
 ---
 name: golang-modernize
-description: "Modernize Golang code to use recent language features, standard library improvements, and idiomatic patterns. Use when reviewing Go code with old-style patterns, when encountering a deprecation warning, or when the user asks for modernization, a Go version upgrade (e.g. to Go 1.27), or a CI/tooling refresh. Not for structural refactors, extracting functions, or moving code between packages (→ See `samber/cc-skills-golang@golang-refactoring` skill)."
+description: "Modernize Golang code to use recent language features, standard library improvements, and idiomatic patterns. Use when reviewing Go code with old-style patterns, when encountering a deprecation warning, or when the user asks for modernization, a Go version upgrade (e.g. to Go 1.27), or a CI/tooling refresh. Not for structural refactors, extracting functions, or moving code between packages (→ See `lucas-varjao/golang-skills@golang-refactoring` skill)."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness, and for projects using Golang.
@@ -9,7 +9,7 @@ metadata:
   version: "1.5.1"
   openclaw:
     emoji: "🔄"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/lucas-varjao/golang-skills
     requires:
       bins:
         - go
@@ -57,7 +57,7 @@ When invoked:
 8. **Before suggesting a dependency update**, run `go mod tidy` and the test suite to verify compatibility. Ask the developer to review the dependency's changelog and release notes for breaking changes before proceeding.
 9. **If the developer explicitly ignores a suggestion**, write a short memo to `.modernize` in the project root so it is not suggested again. Format: one line per ignored suggestion, with a short description.
 
-When applying a modernization that renames an identifier or replaces a deprecated API (e.g. `reflect.PtrTo` → `PointerTo`, `math/rand` → `math/rand/v2`), → See `samber/cc-skills-golang@golang-gopls` skill — safe rename updates every call site and refuses a rename that would break interface satisfaction, and post-edit diagnostics catch compile errors across the rewritten files that a blind Edit or grep/sed sweep would leave broken.
+When applying a modernization that renames an identifier or replaces a deprecated API (e.g. `reflect.PtrTo` → `PointerTo`, `math/rand` → `math/rand/v2`), → See `lucas-varjao/golang-skills@golang-gopls` skill — safe rename updates every call site and refuses a rename that would break interface satisfaction, and post-edit diagnostics catch compile errors across the rewritten files that a blind Edit or grep/sed sweep would leave broken.
 
 ### `.modernize` file format
 
@@ -88,7 +88,7 @@ When the project's `go.mod` targets an older version, suggest upgrading and expl
 
 ## Using the modernize linter
 
-The `modernize` linter (available since **golangci-lint v2.6.0**) automatically detects code that can be rewritten using newer Go features. It originates from `golang.org/x/tools/go/analysis/passes/modernize`; `gopls` and `go fix` (rewritten onto the `go/analysis` framework in Go 1.26, with fixer coverage still growing in Go 1.27 — see [Tooling modernization](./references/tooling.md) for the exact fixer list) cover overlapping modernization checks, but exact coverage differs by tool version. See the `samber/cc-skills-golang@golang-lint` skill for configuration.
+The `modernize` linter (available since **golangci-lint v2.6.0**) automatically detects code that can be rewritten using newer Go features. It originates from `golang.org/x/tools/go/analysis/passes/modernize`; `gopls` and `go fix` (rewritten onto the `go/analysis` framework in Go 1.26, with fixer coverage still growing in Go 1.27 — see [Tooling modernization](./references/tooling.md) for the exact fixer list) cover overlapping modernization checks, but exact coverage differs by tool version. See the `lucas-varjao/golang-skills@golang-lint` skill for configuration.
 
 ## Version-specific modernizations
 
@@ -163,10 +163,10 @@ When modernizing a codebase, prioritize changes by impact:
 27. Set up monthly modernization CI pipeline
 28. Replace `google/uuid`/`gofrs/uuid` with the stdlib `uuid` package, after checking for RFC-variant features the stdlib doesn't cover _(Go 1.27+)_
 29. Run `go fix ./...` after a toolchain upgrade to apply the safe automated transformations _(Go 1.27+)_
-30. Set up AI-driven code review in CI — loads these skills to guide review per area; see `samber/cc-skills-golang@golang-continuous-integration`
+30. Set up AI-driven code review in CI — loads these skills to guide review per area; see `lucas-varjao/golang-skills@golang-continuous-integration`
 
 ## Related Skills
 
-See `samber/cc-skills-golang@golang-concurrency`, `samber/cc-skills-golang@golang-testing`, `samber/cc-skills-golang@golang-observability`, `samber/cc-skills-golang@golang-error-handling`, `samber/cc-skills-golang@golang-lint`, `samber/cc-skills-golang@golang-continuous-integration` skills.
+See `lucas-varjao/golang-skills@golang-concurrency`, `lucas-varjao/golang-skills@golang-testing`, `lucas-varjao/golang-skills@golang-observability`, `lucas-varjao/golang-skills@golang-error-handling`, `lucas-varjao/golang-skills@golang-lint`, `lucas-varjao/golang-skills@golang-continuous-integration` skills.
 
-- → See `samber/cc-skills-golang@golang-refactoring` skill for staging a large modernization sweep as small human-reviewed PRs instead of one big worktree sweep.
+- → See `lucas-varjao/golang-skills@golang-refactoring` skill for staging a large modernization sweep as small human-reviewed PRs instead of one big worktree sweep.

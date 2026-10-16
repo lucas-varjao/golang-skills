@@ -1,6 +1,6 @@
 ---
 name: golang-benchmark
-description: "Golang benchmarking, profiling, and performance measurement. Use when writing, running, or comparing Go benchmarks, profiling hot paths with pprof, interpreting CPU/memory/trace profiles, analyzing results with benchstat, setting up CI benchmark regression detection, or investigating production performance with Prometheus runtime metrics. Also use when the developer needs deep analysis on a specific performance indicator - this skill provides the measurement methodology, while `samber/cc-skills-golang@golang-performance` provides the optimization patterns."
+description: "Golang benchmarking, profiling, and performance measurement. Use when writing, running, or comparing Go benchmarks, profiling hot paths with pprof, interpreting CPU/memory/trace profiles, analyzing results with benchstat, setting up CI benchmark regression detection, or investigating production performance with Prometheus runtime metrics. Also use when the developer needs deep analysis on a specific performance indicator - this skill provides the measurement methodology, while `lucas-varjao/golang-skills@golang-performance` provides the optimization patterns."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness, and for projects using Golang.
@@ -9,7 +9,7 @@ metadata:
   version: "1.3.2"
   openclaw:
     emoji: "📊"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/lucas-varjao/golang-skills
     requires:
       bins:
         - go
@@ -35,7 +35,7 @@ paths:
 
 Performance improvement does not exist without measures — if you can measure it, you can improve it.
 
-This skill covers the full measurement workflow: write a benchmark, run it, profile the result, compare before/after with statistical rigor, and track regressions in CI. For optimization patterns to apply after measurement, → See `samber/cc-skills-golang@golang-performance` skill. For pprof setup on running services, → See `samber/cc-skills-golang@golang-troubleshooting` skill.
+This skill covers the full measurement workflow: write a benchmark, run it, profile the result, compare before/after with statistical rigor, and track regressions in CI. For optimization patterns to apply after measurement, → See `lucas-varjao/golang-skills@golang-performance` skill. For pprof setup on running services, → See `lucas-varjao/golang-skills@golang-troubleshooting` skill.
 
 ## Writing Benchmarks
 
@@ -45,7 +45,7 @@ Benchmark functions live in a `_bench_test.go` file named after the source file 
 
 - Keeping benchmarks in their own file (instead of mixed into `parser_test.go`) keeps `go test -bench=. ./pkg/parser` output free of unrelated `Test*` noise.
 - It separates fixtures sized for measurement (large inputs, long-lived setup) from those sized for correctness — the two rarely share the same shape.
-- The file still follows Go's one-test-file-per-source-file convention (→ See `samber/cc-skills-golang@golang-testing` skill), just with the `_bench` suffix marking its narrower purpose.
+- The file still follows Go's one-test-file-per-source-file convention (→ See `lucas-varjao/golang-skills@golang-testing` skill), just with the `_bench` suffix marking its narrower purpose.
 
 Order `Benchmark*` functions inside `parser_bench_test.go` to mirror the order of the functions/methods they measure in `parser.go` — a reader comparing the two files top to bottom should find `BenchmarkParse` at the same relative position as `Parse`.
 
@@ -199,8 +199,8 @@ For full pprof CLI reference (all commands, non-interactive mode, profile interp
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-performance` skill for optimization patterns to apply after measuring ("if X bottleneck, apply Y")
-- → See `samber/cc-skills-golang@golang-troubleshooting` skill for pprof setup on running services (enable, secure, capture), Delve debugger, GODEBUG flags, root cause methodology
-- → See `samber/cc-skills-golang@golang-observability` skill for everyday always-on monitoring, continuous profiling (Pyroscope), distributed tracing (OpenTelemetry)
-- → See `samber/cc-skills-golang@golang-testing` skill for general testing practices
+- → See `lucas-varjao/golang-skills@golang-performance` skill for optimization patterns to apply after measuring ("if X bottleneck, apply Y")
+- → See `lucas-varjao/golang-skills@golang-troubleshooting` skill for pprof setup on running services (enable, secure, capture), Delve debugger, GODEBUG flags, root cause methodology
+- → See `lucas-varjao/golang-skills@golang-observability` skill for everyday always-on monitoring, continuous profiling (Pyroscope), distributed tracing (OpenTelemetry)
+- → See `lucas-varjao/golang-skills@golang-testing` skill for general testing practices
 - → See `samber/cc-skills@promql-cli` skill for querying Prometheus runtime metrics in production to validate benchmark findings

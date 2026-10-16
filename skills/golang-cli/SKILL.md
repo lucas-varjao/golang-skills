@@ -1,6 +1,6 @@
 ---
 name: golang-cli
-description: "Golang CLI application development. Use when building, modifying, or reviewing a Go CLI tool — especially for command structure, flag handling, configuration layering, version embedding, exit codes, I/O patterns, signal handling, shell completion, argument validation, and CLI unit testing. Also triggers when code uses cobra, viper, or urfave/cli. For cobra-specific APIs → See `samber/cc-skills-golang@golang-spf13-cobra` skill; for viper configuration layering → See `samber/cc-skills-golang@golang-spf13-viper` skill."
+description: "Golang CLI application development. Use when building, modifying, or reviewing a Go CLI tool — especially for command structure, flag handling, configuration layering, version embedding, exit codes, I/O patterns, signal handling, shell completion, argument validation, and CLI unit testing. Also triggers when code uses cobra, viper, or urfave/cli. For cobra-specific APIs → See `lucas-varjao/golang-skills@golang-spf13-cobra` skill; for viper configuration layering → See `lucas-varjao/golang-skills@golang-spf13-viper` skill."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness, and for projects using Golang.
@@ -9,7 +9,7 @@ metadata:
   version: "1.3.0"
   openclaw:
     emoji: "💻"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/lucas-varjao/golang-skills
     requires:
       bins:
         - go
@@ -204,4 +204,4 @@ Use `cmd.OutOrStdout()` and `cmd.ErrOrStderr()` in commands (instead of `os.Stdo
 
 ## Related Skills
 
-See `samber/cc-skills-golang@golang-project-layout`, `samber/cc-skills-golang@golang-dependency-injection`, `samber/cc-skills-golang@golang-testing`, `samber/cc-skills-golang@golang-design-patterns` skills.
+See `lucas-varjao/golang-skills@golang-project-layout`, `lucas-varjao/golang-skills@golang-dependency-injection`, `lucas-varjao/golang-skills@golang-testing`, `lucas-varjao/golang-skills@golang-design-patterns` skills.

@@ -1,6 +1,6 @@
 ---
 name: golang-data-structures
-description: "Golang data structures — slices (internals, capacity growth, preallocation, slices package), maps (internals, hash buckets, maps package), arrays, container/list/heap/ring, strings.Builder vs bytes.Buffer, generic collections, pointers (unsafe.Pointer, weak.Pointer), and copy semantics. Use when choosing or optimizing Go data structures, implementing generic containers, using container/ packages, unsafe or weak pointers, or questioning slice/map internals. Not for applying optimization patterns once profiling has identified a bottleneck (→ See `samber/cc-skills-golang@golang-performance` skill)."
+description: "Golang data structures — slices (internals, capacity growth, preallocation, slices package), maps (internals, hash buckets, maps package), arrays, container/list/heap/ring, strings.Builder vs bytes.Buffer, generic collections, pointers (unsafe.Pointer, weak.Pointer), and copy semantics. Use when choosing or optimizing Go data structures, implementing generic containers, using container/ packages, unsafe or weak pointers, or questioning slice/map internals. Not for applying optimization patterns once profiling has identified a bottleneck (→ See `lucas-varjao/golang-skills@golang-performance` skill)."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness, and for projects using Golang.
@@ -9,7 +9,7 @@ metadata:
   version: "1.2.2"
   openclaw:
     emoji: "🗃"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/lucas-varjao/golang-skills
     requires:
       bins:
         - go
@@ -25,9 +25,9 @@ paths:
 
 Built-in and standard library data structures: internals, correct usage, and selection guidance.
 
-- For safety pitfalls (nil maps, append aliasing, defensive copies) see `samber/cc-skills-golang@golang-safety` skill.
-- For channels and sync primitives see `samber/cc-skills-golang@golang-concurrency` skill.
-- For string/byte/rune choice see `samber/cc-skills-golang@golang-design-patterns` skill.
+- For safety pitfalls (nil maps, append aliasing, defensive copies) see `lucas-varjao/golang-skills@golang-safety` skill.
+- For channels and sync primitives see `lucas-varjao/golang-skills@golang-concurrency` skill.
+- For string/byte/rune choice see `lucas-varjao/golang-skills@golang-design-patterns` skill.
 
 ## Best Practices Summary
 
@@ -42,7 +42,7 @@ Built-in and standard library data structures: internals, correct usage, and sel
 
 ## Slice Internals
 
-A slice is a 3-word header: pointer, length, capacity. Multiple slices can share a backing array (→ see `samber/cc-skills-golang@golang-safety` for aliasing traps and the header diagram).
+A slice is a 3-word header: pointer, length, capacity. Multiple slices can share a backing array (→ see `lucas-varjao/golang-skills@golang-safety` for aliasing traps and the header diagram).
 
 ### Capacity Growth
 
@@ -65,7 +65,7 @@ s = slices.Grow(s, additionalNeeded)
 
 ### `slices` Package (Go 1.21+)
 
-Key functions: `Sort`/`SortFunc`, `BinarySearch`, `Contains`, `Compact`, `Grow`. For `Clone`, `Equal`, `DeleteFunc` → see `samber/cc-skills-golang@golang-safety` skill.
+Key functions: `Sort`/`SortFunc`, `BinarySearch`, `Contains`, `Compact`, `Grow`. For `Clone`, `Equal`, `DeleteFunc` → see `lucas-varjao/golang-skills@golang-safety` skill.
 
 **[Slice Internals Deep Dive](./references/slice-internals.md)** — Full `slices` package reference, growth mechanics, `len` vs `cap`, header copying, backing array aliasing.
 
@@ -88,7 +88,7 @@ m := make(map[string]*User, len(users)) // avoids rehashing during population
 | `All` (1.23+)     | Iterator over all entries    |
 | `Keys`, `Values`  | Iterators over keys/values   |
 
-For `Clone`, `Equal`, sorted iteration → see `samber/cc-skills-golang@golang-safety` skill.
+For `Clone`, `Equal`, sorted iteration → see `lucas-varjao/golang-skills@golang-safety` skill.
 
 **[Map Internals Deep Dive](./references/map-internals.md)** — How Go maps store and hash data, bucket overflow chains, why maps never shrink (and what to do about it), comparing map performance to alternatives.
 
@@ -164,18 +164,18 @@ For advanced data structures (trees, sets, queues, stacks) beyond the standard l
 
 When using third-party libraries, refer to their official documentation and code examples for current API signatures.
 
-- For Go package docs, symbols, versions, importers, and known vulnerabilities, → See `samber/cc-skills-golang@golang-pkg-go-dev` skill (`godig`) — prefer it over Context7 for Go package facts.
-- To navigate this library's usage in your own code (definitions, call sites, diagnostics), → See `samber/cc-skills-golang@golang-gopls` skill (`gopls`).
+- For Go package docs, symbols, versions, importers, and known vulnerabilities, → See `lucas-varjao/golang-skills@golang-pkg-go-dev` skill (`godig`) — prefer it over Context7 for Go package facts.
+- To navigate this library's usage in your own code (definitions, call sites, diagnostics), → See `lucas-varjao/golang-skills@golang-gopls` skill (`gopls`).
 - Context7 remains a fallback for docs not indexed on pkg.go.dev.
 
 ## Cross-References
 
-- → See `samber/cc-skills-golang@golang-performance` skill for struct field alignment, memory layout optimization, and cache locality
-- → See `samber/cc-skills-golang@golang-safety` skill for nil map/slice pitfalls, append aliasing, defensive copying, `slices.Clone`/`Equal`
-- → See `samber/cc-skills-golang@golang-concurrency` skill for channels, `sync.Map`, `sync.Pool`, and all sync primitives
-- → See `samber/cc-skills-golang@golang-design-patterns` skill for `string` vs `[]byte` vs `[]rune`, iterators, streaming
-- → See `samber/cc-skills-golang@golang-structs-interfaces` skill for struct composition, embedding, and generics vs `any`
-- → See `samber/cc-skills-golang@golang-code-style` skill for slice/map initialization style
+- → See `lucas-varjao/golang-skills@golang-performance` skill for struct field alignment, memory layout optimization, and cache locality
+- → See `lucas-varjao/golang-skills@golang-safety` skill for nil map/slice pitfalls, append aliasing, defensive copying, `slices.Clone`/`Equal`
+- → See `lucas-varjao/golang-skills@golang-concurrency` skill for channels, `sync.Map`, `sync.Pool`, and all sync primitives
+- → See `lucas-varjao/golang-skills@golang-design-patterns` skill for `string` vs `[]byte` vs `[]rune`, iterators, streaming
+- → See `lucas-varjao/golang-skills@golang-structs-interfaces` skill for struct composition, embedding, and generics vs `any`
+- → See `lucas-varjao/golang-skills@golang-code-style` skill for slice/map initialization style
 
 ## Common Mistakes
 

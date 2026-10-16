@@ -1,6 +1,6 @@
 ---
 name: golang-continuous-integration
-description: "GitHub Actions CI/CD pipeline configuration for Golang projects — workflow files for test, lint, SAST, coverage and vulnerability-scan jobs, Dependabot and Renovate config files, GoReleaser release pipelines, Docker build/push, repository security settings, and AI-driven PR review. Use when setting up or improving Go project CI, writing or fixing `.github/workflows/*.yml`, adding a linter or security scanner as a pipeline job, wiring automated dependency-update bots, or adding quality gates. Covers wiring tools into a pipeline, not the analysis they perform: do NOT use for choosing or interpreting security findings (→ See `samber/cc-skills-golang@golang-security` skill) or for choosing, upgrading, or auditing dependency versions (→ See `samber/cc-skills-golang@golang-dependency-management` skill)."
+description: "GitHub Actions CI/CD pipeline configuration for Golang projects — workflow files for test, lint, SAST, coverage and vulnerability-scan jobs, Dependabot and Renovate config files, GoReleaser release pipelines, Docker build/push, repository security settings, and AI-driven PR review. Use when setting up or improving Go project CI, writing or fixing `.github/workflows/*.yml`, adding a linter or security scanner as a pipeline job, wiring automated dependency-update bots, or adding quality gates. Covers wiring tools into a pipeline, not the analysis they perform: do NOT use for choosing or interpreting security findings (→ See `lucas-varjao/golang-skills@golang-security` skill) or for choosing, upgrading, or auditing dependency versions (→ See `lucas-varjao/golang-skills@golang-dependency-management` skill)."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness, and for projects using Golang.
@@ -9,7 +9,7 @@ metadata:
   version: "1.4.2"
   openclaw:
     emoji: "🚀"
-    homepage: https://github.com/samber/cc-skills-golang
+    homepage: https://github.com/lucas-varjao/golang-skills
     requires:
       bins:
         - go
@@ -110,7 +110,7 @@ Use `-count=1` to disable test caching — cached results can hide flaky service
 
 ### golangci-lint Configuration
 
-Create `.golangci.yml` at the root of the project. See the `samber/cc-skills-golang@golang-lint` skill for the recommended configuration.
+Create `.golangci.yml` at the root of the project. See the `lucas-varjao/golang-skills@golang-lint` skill for the recommended configuration.
 
 ---
 
@@ -255,7 +255,7 @@ The Claude Code GitHub App integration is configured via the `/install-github-ap
 Copy skills into your repo, then append [copilot-review-instructions.md](./assets/copilot-review-instructions.md) to `.github/copilot-instructions.md`:
 
 ```bash
-npx skills add https://github.com/samber/cc-skills-golang --agent github-copilot --skill '*' -y --copy
+npx skills add https://github.com/lucas-varjao/golang-skills --agent github-copilot --skill '*' -y --copy
 ln -s .agents .copilot
 ```
 
@@ -277,4 +277,4 @@ ln -s .agents .copilot
 
 ## Related Skills
 
-See `samber/cc-skills-golang@golang-lint`, `samber/cc-skills-golang@golang-security`, `samber/cc-skills-golang@golang-testing`, `samber/cc-skills-golang@golang-dependency-management`, `samber/cc-skills-golang@golang-modernize` skills.
+See `lucas-varjao/golang-skills@golang-lint`, `lucas-varjao/golang-skills@golang-security`, `lucas-varjao/golang-skills@golang-testing`, `lucas-varjao/golang-skills@golang-dependency-management`, `lucas-varjao/golang-skills@golang-modernize` skills.
